@@ -229,10 +229,6 @@ function Home() {
           </div>
         </div>
       </section>
-
-      <section className="section8">
-        <h1>New things</h1>
-      </section>
     </>
   );
 }
