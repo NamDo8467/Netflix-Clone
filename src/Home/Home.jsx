@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Home.css";
-import backgroundImage from "../images/background.jpg";
 import rightArrow from "../images/chevron-right-white.png";
 import mobileImage from "../images/mobile.jpg";
 import kidImage from "../images/kid.png";
@@ -9,34 +8,26 @@ import tvImage from "../images/tv.png";
 import NavBar from "../NavBar/NavBar";
 //cc803c8c2a7e8fddea1b3ff64514f0b4
 function Home() {
-  const [isClicked, setIsClicked] = useState(false);
-
-  const showAnswer = (answerNumber, plusIconNumber, xIconNumber) => {
-    const question = document.querySelector(".question");
+    const showAnswer = (answerNumber, plusIconNumber, xIconNumber) => {
+    const section7 = document.querySelector(".section7");
     const answer = document.querySelector(`.${answerNumber}`);
     const plusIcon = document.querySelector(`.${plusIconNumber}`);
-    const xIcon = document.querySelector(`.${xIconNumber}`);
-
-    if (isClicked) {
-      answer.style.display = "block";
-      // answer.style.userSelect = "text"
-      // plusIcon.style.userSelect = "none"
-      plusIcon.style.transform = "rotate(-45deg)";
     
-      plusIcon.style.transition = "transform";
-      
+    if (answer.style.display == "" || answer.style.display == "none") {
+      answer.style.display = "block";
+      section7.style.height = `${section7.offsetHeight+answer.offsetHeight}px`
+      console.log(answer.offsetHeight); 
 
-      setIsClicked(false);
+      plusIcon.style.transform = "rotate(-45deg)";
+
+      plusIcon.style.transition = "transform";
     } else {
-      
-      // answer.style.userSelect = "none"
 
       plusIcon.style.transform = "rotate(90deg)";
       plusIcon.style.transition = "transform";
+      section7.style.height = `${section7.offsetHeight-answer.offsetHeight}px`
 
       answer.style.display = "none";
-
-      setIsClicked(true);
     }
   };
 
@@ -56,9 +47,9 @@ function Home() {
               membership.
             </p>
             <div>
-              <input type="text" placeholder="Enter your email address..." />
+              <input type="text" placeholder="Email address..." />
               <button>
-                Try 30 days free
+                Get Started
                 <img src={rightArrow} alt="right arrow" height="25px" />
               </button>
             </div>
@@ -74,14 +65,14 @@ function Home() {
             players, and more.
           </h2>
         </div>
-        <div className="tv-image">
-          <img src={tvImage} alt="TV" />
+        <div className="image">
+          <img className="tv-image" src={tvImage} alt="TV" />
         </div>
       </section>
 
       <section className="section3 sections-common-things">
-        <div className="mobile-image">
-          <img src={mobileImage} alt="mobile" />
+        <div className="image ">
+          <img className="mobile-image" src={mobileImage} alt="mobile" />
         </div>
         <div className="title">
           <h1>Download your shows to watch offline</h1>
@@ -89,7 +80,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="section4">
+      <section className="section4 sections-common-things">
         <div className="title">
           <h1>Watch everywhere</h1>
           <h2>
@@ -100,8 +91,8 @@ function Home() {
       </section>
 
       <section className="section6 sections-common-things">
-        <div className="kid-image">
-          <img src={kidImage} alt="kid" />
+        <div className="image">
+          <img className="kid-image" src={kidImage} alt="kid" />
         </div>
         <div className="title">
           <h1>Create profiles for kids</h1>
@@ -125,7 +116,7 @@ function Home() {
               What is NetFlix?
               <span className="plus-icon plus-icon-1">&#43;</span>
             </div>
-            <div  unselectable="on"  className=" answer answer1">
+            <div className=" answer answer1">
               Netflix is a streaming service that offers a wide variety of
               award-winning TV shows, movies, anime, documentaries, and more on
               thousands of internet-connected devices. You can watch as much as
@@ -228,6 +219,82 @@ function Home() {
             </div>
           </div>
         </div>
+        <div className="try-30-days-free">
+          <p>
+            Ready to watch? Enter your email to create or restart your
+            membership.
+          </p>
+          <div>
+            <input type="text" placeholder="Email address..." />
+            <button>
+              Get Started
+              <img src={rightArrow} alt="right arrow" height="25px" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="section8">
+        <footer className="footer">
+          <p>
+            <a>Questions? Contact us.</a>
+          </p>
+          <ul>
+            <div>
+              <li>
+                <a>FAQ</a>
+              </li>
+              <li>
+                <a>Investor Relation</a>
+              </li>
+              <li>
+                <a>Privacy</a>
+              </li>
+              <li>
+                <a>Speed Test</a>
+              </li>
+            </div>
+            <div>
+              <li>
+                <a>Help Center</a>
+              </li>
+              <li>
+                <a>Jobs</a>
+              </li>
+              <li>
+                <a>Cookies Preferences</a>
+              </li>
+              <li>
+                <a>Legal Notices</a>
+              </li>
+            </div>
+            <div>
+              <li>
+                <a>Account</a>
+              </li>
+              <li>
+                <a>Ways to watch</a>
+              </li>
+              <li>
+                <a>Corporate Information</a>
+              </li>
+              <li>
+                <a>Only On Netflix</a>
+              </li>
+            </div>
+            <div>
+              <li>
+                <a>Media Center</a>
+              </li>
+              <li>
+                <a>Terms of Use</a>
+              </li>
+              <li>
+                <a>Contact Us</a>
+              </li>
+            </div>
+          </ul>
+        </footer>
       </section>
     </>
   );
