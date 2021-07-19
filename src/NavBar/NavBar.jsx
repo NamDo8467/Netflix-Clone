@@ -6,7 +6,7 @@ function NavBar() {
     return (
         <div className='navbar-container'>
             <img className='netflix-logo' src={netflixLogo} alt="netflix logo" />
-            <a className='sign-in-button' href="/signin">Sign In</a>
+            <a className='sign-in-button' href="/login">Sign In</a>
         </div>
     )
 }
