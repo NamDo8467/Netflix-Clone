@@ -8,7 +8,7 @@ import tvImage from "../images/tv.png";
 import NavBar from "../NavBar/NavBar";
 //cc803c8c2a7e8fddea1b3ff64514f0b4
 function Home() {
-    const showAnswer = (answerNumber, plusIconNumber, xIconNumber) => {
+    const showAnswer = (answerNumber, plusIconNumber) => {
     const section7 = document.querySelector(".section7");
     const answer = document.querySelector(`.${answerNumber}`);
     const plusIcon = document.querySelector(`.${plusIconNumber}`);
@@ -111,7 +111,7 @@ function Home() {
           <div className="question-container">
             <div
               className="question"
-              onClick={() => showAnswer("answer1", "plus-icon-1", "x-icon-1")}
+              onClick={() => showAnswer("answer1", "plus-icon-1")}
             >
               What is NetFlix?
               <span className="plus-icon plus-icon-1">&#43;</span>
@@ -128,7 +128,7 @@ function Home() {
           <div className="question-container">
             <div
               className="question"
-              onClick={() => showAnswer("answer2", "plus-icon-2", "x-icon-2")}
+              onClick={() => showAnswer("answer2", "plus-icon-2")}
             >
               How much does Netflix cost?
               <span className="plus-icon plus-icon-2">&#43;</span>
@@ -143,7 +143,7 @@ function Home() {
           <div className="question-container">
             <div
               className="question"
-              onClick={() => showAnswer("answer3", "plus-icon-3", "x-icon-3")}
+              onClick={() => showAnswer("answer3", "plus-icon-3")}
             >
               Where can I watch?
               <span className="plus-icon plus-icon-3">&#43;</span>
@@ -169,7 +169,7 @@ function Home() {
           <div className="question-container">
             <div
               className="question"
-              onClick={() => showAnswer("answer4", "plus-icon-4", "x-icon-4")}
+              onClick={() => showAnswer("answer4", "plus-icon-4")}
             >
               How do I cancel?
               <span className="plus-icon plus-icon-4">&#43;</span>
@@ -185,7 +185,7 @@ function Home() {
           <div className="question-container">
             <div
               className="question"
-              onClick={() => showAnswer("answer5", "plus-icon-5", "x-icon-5")}
+              onClick={() => showAnswer("answer5", "plus-icon-5")}
             >
               What can I watch on Netflix?
               <span className="plus-icon plus-icon-5">&#43;</span>
@@ -200,7 +200,7 @@ function Home() {
           <div className="question-container">
             <div
               className="question"
-              onClick={() => showAnswer("answer6", "plus-icon-6", "x-icon-6")}
+              onClick={() => showAnswer("answer6", "plus-icon-6")}
             >
               Is Netflix good for kids?
               <span className="plus-icon plus-icon-6">&#43;</span>
