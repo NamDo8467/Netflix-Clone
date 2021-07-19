@@ -29,7 +29,7 @@ function Login() {
           </div>
           <div className="signup-now">
             New to Netflix?
-            <a href="/">Sign up now</a>
+            <a href="/signup">Sign up now</a>
           </div>
         </div>
 
