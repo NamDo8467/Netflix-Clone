@@ -47,8 +47,8 @@ function Home() {
               membership.
             </p>
             <div>
-              <input type="text" placeholder="Email address..." />
-              <button>
+              <input className="try-30-days-input" type="text" placeholder="Email address..." />
+              <button className="try-30-days-button">
                 Get Started
                 <img src={rightArrow} alt="right arrow" height="25px" />
               </button>

@@ -58,30 +58,30 @@
   margin: 0 auto;
 }
 
-.try-30-days-free input,
-button {
+.try-30-days-free .try-30-days-input,
+.try-30-days-button {
   display: inline-block;
   padding: 10px 15px;
   font-size: 20px;
   border-radius: 0;
   min-height: 30px;
 }
-.try-30-days-free input {
+.try-30-days-free .try-30-days-input {
   min-width: 400px;
   border: 1px solid lightgray;
 }
-.try-30-days-free input:focus {
+.try-30-days-free .try-30-days-input:focus {
   outline: none;
   border-color: black;
 }
-.try-30-days-free button {
+.try-30-days-free .try-30-days-button {
   display: flex;
   align-items: center;
   border: 1px solid transparent;
   background-color: red;
   color: white;
 }
-.try-30-days-free button:hover {
+.try-30-days-free .try-30-days-button:hover {
   cursor: pointer;
   opacity: 0.9;
 }
@@ -255,22 +255,22 @@ button {
     align-items: center;
   }
 
-  .try-30-days-free input,
-  button {
+  .try-30-days-free .try-30-days-input,
+  .try-30-days-button {
     display: inline-block;
     padding: 10px 15px;
     font-size: 15px;
     min-height: 30px;
   }
-  .try-30-days-free input {
+  .try-30-days-free .try-30-days-input {
     min-width: 300px;
     border: 1px solid lightgray;
   }
-  .try-30-days-free input:focus {
+  .try-30-days-free .try-30-days-input:focus {
     outline: none;
     border-color: black;
   }
-  .try-30-days-free button {
+  .try-30-days-free .try-30-days-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -280,7 +280,7 @@ button {
     margin-top: 20px;
     width: 50%;
   }
-  .try-30-days-free button img {
+  .try-30-days-free .try-30-days-button img {
     height: 15px;
     margin-left: 5px;
   }
@@ -418,22 +418,22 @@ button {
     align-items: center;
   }
 
-  .try-30-days-free input,
-  button {
+  .try-30-days-free .try-30-days-input,
+  .try-30-days-button {
     display: inline-block;
     min-height: 30px;
   }
-  .try-30-days-free input {
+  .try-30-days-free .try-30-days-input {
     font-size: 18px;
     min-width: 500px;
     padding: 15px 15px;
     border: 1px solid lightgray;
   }
-  .try-30-days-free input:focus {
+  .try-30-days-free .try-30-days-input:focus {
     outline: none;
     border-color: black;
   }
-  .try-30-days-free button {
+  .try-30-days-free .try-30-days-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -445,7 +445,7 @@ button {
     min-width: 100px;
   }
 
-  .try-30-days-free button img {
+  .try-30-days-free .try-30-days-button img {
     height: 15px;
     margin-left: 5px;
   }
@@ -584,23 +584,23 @@ button {
     margin: 0 auto;
   }
 
-  .try-30-days-free input,
-  button {
+  .try-30-days-free .try-30-days-input,
+  .try-30-days-button {
     display: inline-block;
     padding: 14px 25px;
     font-size: 20px;
     border-radius: 0;
     min-height: 30px;
   }
-  .try-30-days-free input {
+  .try-30-days-free .try-30-days-input {
     min-width: 400px;
     border: 1px solid lightgray;
   }
-  .try-30-days-free input:focus {
+  .try-30-days-free .try-30-days-input:focus {
     outline: none;
     border-color: black;
   }
-  .try-30-days-free button {
+  .try-30-days-free .try-30-days-button {
     display: flex;
     align-items: center;
     border: 1px solid transparent;
