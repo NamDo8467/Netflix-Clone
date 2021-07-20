@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
+import axios from "axios";
 
 function Login() {
   return (
     <div className="login-form-container">
-
       <div className="login-form-main-content">
         <h1 className="login-form-title">Sign In</h1>
         <form className="login-form">
-          <input type="text" placeholder="Email or phone number" />
-          <input type="password" placeholder="Password" />
-          <button className="login-form-button">Sign In</button>
+          <input type="text" placeholder="Email or phone number" required />
+          <input type="password" placeholder="Password" required />
+          <button className="login-form-button" type="submit">
+            Sign In
+          </button>
           <div className="login-form-help">
             <div className="remember-me">
               <input type="checkbox" />
@@ -22,7 +24,6 @@ function Login() {
           </div>
         </form>
 
-        
         <div className="login-form-other-options">
           <div className="login-with-facebook">
             <a href="">Login with Facebook</a>
@@ -32,8 +33,6 @@ function Login() {
             <a href="/signup">Sign up now</a>
           </div>
         </div>
-
-
       </div>
     </div>
   );
