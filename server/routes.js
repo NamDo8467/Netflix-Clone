@@ -14,7 +14,9 @@ route.post("/signup", (req, res) => {
 });
 
 route.post("/login", (req, res) => {
-  User.find({ username: "Nam Do", password: "123" })
+  const username = req.body.email;
+  const password = req.body.password;
+  User.find({ username: username, password: password })
     .exec()
     .then((doc) => {
       res.send(doc);
