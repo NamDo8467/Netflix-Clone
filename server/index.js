@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const route = require("./routes");
 const mongoose = require("mongoose");
+require('dotenv').config();
 
 const app = express();
 app.use(cors());
@@ -14,7 +15,7 @@ app.get("/", (req, res) => {
   res.send("Hello");
 });
 mongoose.connect(
-  "mongodb+srv://namdo:namdo@cluster0.qftfl.mongodb.net/netflix_db?retryWrites=true&w=majority",
+  process.env.DB_CONNECTION_LINK ,
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 const PORT = 5000;
