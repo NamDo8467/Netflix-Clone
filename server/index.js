@@ -2,13 +2,18 @@ const express = require("express");
 const cors = require("cors");
 const route = require("./routes");
 const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: true, credentials: true }))
+
+app.use(cookieParser());
 app.use(express.json());
+
+
 // app.use(express.json())
-// app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false }));
 
 app.use(route);
 app.get("/", (req, res) => {
@@ -17,8 +22,7 @@ app.get("/", (req, res) => {
 mongoose.connect(process.env.DB_CONNECTION_LINK, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex:true
-
+  useCreateIndex: true,
 });
 const PORT = 5500;
 app.listen(PORT, () => {
