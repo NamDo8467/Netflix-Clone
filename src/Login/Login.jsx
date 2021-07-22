@@ -3,14 +3,44 @@ import "./Login.css";
 import axios from "axios";
 
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const login =  async (e) => {
+    e.preventDefault();
+    axios.post("http://localhost:5500/login", {
+      email: email,
+      password: password,
+    }).then(result => {
+      console.log(result.data);
+    }).catch(err => {
+      console.log(err);
+    })
+
+    
+  };
   return (
     <div className="login-form-container">
       <div className="login-form-main-content">
         <h1 className="login-form-title">Sign In</h1>
         <form className="login-form">
-          <input type="text" placeholder="Email or phone number" required />
-          <input type="password" placeholder="Password" required />
-          <button className="login-form-button" type="submit">
+          <input
+            type="text"
+            placeholder="Email or phone number"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            required
+          />
+          <button className="login-form-button" onClick={login}>
             Sign In
           </button>
           <div className="login-form-help">
