@@ -41,7 +41,7 @@ route.post("/signup", async (req, res) => {
         path: 'http://localhost:3000/signup',
       })
       .send({ userID: user._id, message: "Successfully registered" });
-    // res.send({ userID: user._id, message: "Successfully registered" });
+    
   } catch (err) {
     const errors = handleError(err);
     res.status(400).json(errors);
