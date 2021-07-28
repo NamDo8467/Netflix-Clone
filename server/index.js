@@ -3,14 +3,16 @@ const cors = require("cors");
 const route = require("./routes");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
+const verifyCookie = require("./verifyCookie");
+
 require("dotenv").config();
 
 const app = express();
-app.use(cors({ origin: true, credentials: true }))
-
 app.use(cookieParser());
-app.use(express.json());
 
+app.use(cors({ origin: true, credentials: true }));
+
+app.use(express.json());
 
 // app.use(express.json())
 app.use(express.urlencoded({ extended: false }));
@@ -24,6 +26,8 @@ mongoose.connect(process.env.DB_CONNECTION_LINK, {
   useUnifiedTopology: true,
   useCreateIndex: true,
 });
+
+
 const PORT = 5500;
 app.listen(PORT, () => {
   console.log("Server is running on port " + PORT);
