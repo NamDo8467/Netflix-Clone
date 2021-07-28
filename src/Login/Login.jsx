@@ -1,23 +1,59 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import "./Login.css";
 import axios from "axios";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const login =  async (e) => {
+  let history = useHistory();
+  const login = async (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5500/login", {
-      email: email,
-      password: password,
-    }).then(result => {
-      console.log(result.data);
-    }).catch(err => {
-      console.log(err);
-    })
+    const email_error = document.createElement("p");
+    email_error.className = "email-error";
+    const password_error = document.createElement("p");
+    password_error.className = "password-error";
 
-    
+    try {
+      const result = await axios.post(
+        "http://localhost:5500/login",
+        {
+          email: email,
+          password: password,
+        },
+        { withCredentials: true }
+      );
+      
+        
+        history.push("/movies");
+      
+    } catch (error) {
+      console.log(error);
+      const login_error = error.response.data;
+      const email_input = document.querySelector(".email");
+      const password_input = document.querySelector(".password");
+
+      if (login_error.email) {
+        if (document.querySelector(".password-error")) {
+          document.querySelector(".password-error").remove();
+        }
+        if (!document.querySelector(".email-error")) {
+          email_error.textContent = `${login_error.email}`;
+          email_input.before(email_error);
+          email_input.style.marginBottom = "10px";
+        }
+      } else {
+        if (document.querySelector(".email-error")) {
+          document.querySelector(".email-error").remove();
+        }
+        if (!document.querySelector(".password-error")) {
+          password_error.textContent = `${login_error.password}`;
+          password_input.before(password_error);
+          email_input.style.marginTop = "10px";
+        }
+      }
+    }
   };
   return (
     <div className="login-form-container">
@@ -31,6 +67,7 @@ function Login() {
               setEmail(e.target.value);
             }}
             required
+            className="email"
           />
           <input
             type="password"
@@ -39,6 +76,7 @@ function Login() {
               setPassword(e.target.value);
             }}
             required
+            className="password"
           />
           <button className="login-form-button" onClick={login}>
             Sign In
