@@ -53,7 +53,7 @@ route.post("/signup", async (req, res) => {
         maxAge: 1 * 24 * 60 * 60 * 1000,
         httpOnly: true,
       })
-      .send({ userID: user._id, message: "Successfully registered" });
+      .send({ message: "Successfully signed up" });
   } catch (err) {
     const errors = handleError(err);
     res.status(400).send(errors);
