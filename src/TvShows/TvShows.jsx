@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import netflixLogo from "../images/netflix-logo.svg";
 import userIcon from "../images/userIcon.png";
 import breakingBad from "../images/breaking_bad.png";
-import "./TvShows.css";
 import playButton from "../images/play-button-icon.png";
 import axios from "axios";
 import { useHistory } from "react-router-dom";

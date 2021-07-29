@@ -23,7 +23,7 @@ function ComedyTvShows() {
         `https://api.themoviedb.org/3/discover/tv?api_key=cc803c8c2a7e8fddea1b3ff64514f0b4&language=en-US&sort_by=popularity.desc&page=${page}&timezone=America%2FNew_York&with_genres=35&include_null_first_air_dates=false&with_watch_monetization_types=flatrate`
       );
       let a = [];
-      while (tvShowIndex.length <= 4) {
+      while (tvShowIndex.length <= 5) {
         n = Math.floor(Math.random() * 20);
         if (tvShowIndex.indexOf(n) == -1) {
           tvShowIndex.push(n);
@@ -40,7 +40,7 @@ function ComedyTvShows() {
   }, []);
   return (
     <section className="comedy-tv-shows">
-      <h2 className="category">Comedy</h2>
+      <h3 className="category">Comedy</h3>
       <div className="tv-shows">
         {tvShows.map((tvShow) => {
           if (tvShow.poster_path) {

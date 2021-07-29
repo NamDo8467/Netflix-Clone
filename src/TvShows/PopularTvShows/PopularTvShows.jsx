@@ -22,7 +22,7 @@ function PopularTvShows() {
         `https://api.themoviedb.org/3/tv/popular?api_key=cc803c8c2a7e8fddea1b3ff64514f0b4&language=en-US&page=${page}`
       );
       let a = [];
-      while (tvShowIndex.length <= 4) {
+      while (tvShowIndex.length <= 5) {
         n = Math.floor(Math.random() * 20);
         if (tvShowIndex.indexOf(n) == -1) {
           tvShowIndex.push(n);
@@ -40,7 +40,7 @@ function PopularTvShows() {
 
   return (
     <section className="popular-tv-shows">
-      <h2 className="category">Popular</h2>
+      <h3 className="category">Popular</h3>
       <div className="tv-shows">
         {tvShows.map((tvShow) => {
           if (tvShow.poster_path !== "") {
