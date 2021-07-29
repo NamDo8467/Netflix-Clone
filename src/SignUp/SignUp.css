@@ -84,10 +84,19 @@
     
   }
   
+.email-error{
+  font-size: 12px;
+  color: red;
+  opacity: 1;
+  margin-top:10px;
+  margin-bottom:0px;
+}
+.password-error{
+  font-size: 12px;
+  color: red;
+  margin-top: 10px;
+}
 
-
-
-  
   @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
     .signup-form-main-content{
       

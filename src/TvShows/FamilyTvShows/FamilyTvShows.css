@@ -1,0 +1,89 @@
+/* 
+.family-tv-shows {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:rgba(0, 0, 0, 0.411);
+  
+  }
+  .category {
+    align-self: flex-start;
+    margin-left: 50px;
+  }
+  .tv-shows {
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    justify-content: space-around;
+  }
+  .tv-show-card {
+    position: relative;
+  }
+  
+  .tv-show-poster {
+    height: 300px;
+    width: 200px;
+    z-index: -1;
+  }
+  
+  .detail-button {
+    padding: 0.6rem;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  .category {
+    color: white;
+  }
+  
+  .overview-section {
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    color:white;
+    background-color:rgba(0, 0, 0, 0.644);
+    border:1px solid black;
+    align-items:center;
+  
+  }
+  .overview{
+    max-width:600px;
+  }
+  
+  .overview-content{
+    
+    font-size: 14px;
+  }
+  
+  .play-trailer-button{
+    width:130px;
+    padding: 0px 20px;
+    display:flex; 
+    justify-content: space-between;
+    align-items:center;
+    background-color:red;
+    border: transparent;
+    color:#ffffff;
+    height:45px;
+    opacity:0.9;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .play-trailer-button{
+    opacity: 1;
+      
+  } */
