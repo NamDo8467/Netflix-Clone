@@ -8,11 +8,14 @@ function SignUp(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   let history = useHistory();
-  const signUp = (e) => {
+  const signUp = async (e) => {
     e.preventDefault();
-
-    const result = axios
-      .post(
+    const email_error = document.createElement("p");
+    email_error.className = "email-error";
+    const password_error = document.createElement("p");
+    password_error.className = "password-error";
+    try {
+      const result = await axios.post(
         "http://localhost:5500/signup",
         {
           name: name,
@@ -22,50 +25,44 @@ function SignUp(props) {
         {
           withCredentials: true,
         }
-      )
-      .then((doc) => {
-        console.log(doc.data);
-        // history.push("/login");
-      })
-      .catch((error) => {
-        const signup_error = error.response.data;
-        const email_input = document.querySelector("#email");
-        const password_input = document.querySelector("#password")
+      );
+      if (result.data.message === "Successfully signed up") {
+        alert("Successfully signed up");
+        history.push("/login");
+      } else {
+        alert("Sign up failed")
+      }
+    } catch (error) {
+      const signup_error = error.response.data;
+      const email_input = document.querySelector(".email");
+      const password_input = document.querySelector(".password");
 
-        if (signup_error.email) {
-          if (document.querySelector(".password-error")) {
-            document.querySelector(".password-error").remove()
-          }
-          if (!document.querySelector(".email-error")) {
-            const email_error = document.createElement("p");
-            email_error.className = "email-error";
-
-            email_error.textContent = `${signup_error.email}`;
-            email_input.before(email_error);
-            email_input.style.marginBottom = "10px";
-          }
-        } else {
-          if (document.querySelector(".email-error")) {
-            document.querySelector(".email-error").remove()
-          }
-          if (!document.querySelector(".password-error")) {
-            const password_error = document.createElement("p");
-            password_error.className = "password-error";
-            password_error.textContent = `${signup_error.password}`;
-            password_input.before(password_error);
-            email_input.style.marginTop = "10px";
-
-            
-
-          }
+      if (signup_error.email) {
+        if (document.querySelector(".password-error")) {
+          document.querySelector(".password-error").remove();
         }
-      });
+        if (!document.querySelector(".email-error")) {
+          email_error.textContent = `${signup_error.email}`;
+          email_input.before(email_error);
+          email_input.style.marginBottom = "10px";
+        }
+      } else {
+        if (document.querySelector(".email-error")) {
+          document.querySelector(".email-error").remove();
+        }
+        if (!document.querySelector(".password-error")) {
+          password_error.textContent = `${signup_error.password}`;
+          password_input.before(password_error);
+          email_input.style.marginTop = "10px";
+        }
+      }
+    }
   };
   return (
     <div className="signup-form-container">
       <div className="signup-form-main-content">
         <h1 className="signup-form-title">Sign Up</h1>
-        <form className="signup-form" onSubmit={signUp}>
+        <form className="signup-form">
           <input
             type="text"
             placeholder="Name"
@@ -77,16 +74,16 @@ function SignUp(props) {
             placeholder="Email or phone number"
             onChange={(e) => setEmail(e.target.value)}
             required
-            id="email"
+            className="email"
           />
           <input
             type="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
             required
-            id="password"
+            className="password"
           />
-          <button className="signup-form-button" type="submit">
+          <button className="signup-form-button" onClick={signUp}>
             Sign Up
           </button>
           <div className="already-have-an-account">
