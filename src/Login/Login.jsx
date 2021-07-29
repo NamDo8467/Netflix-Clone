@@ -26,7 +26,7 @@ function Login() {
       );
       
         
-        history.push("/movies");
+        history.push("/tvshows");
       
     } catch (error) {
       console.log(error);
