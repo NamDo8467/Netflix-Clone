@@ -12,8 +12,10 @@ const playTrailer = (videoID = `XZ8daibM3AE`) => {
   iframe.src = `https://www.youtube.com/embed/${videoID}`;
   iframe.allow =
     "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-  iframe.title = "Breaking bad";
+
   iframe.allowFullscreen = "true";
+  iframe.style.height = "500px";
+  iframe.style.marginTop = "50px";
   iframeContainer.appendChild(iframe);
 
   const section = document.querySelector("section");
@@ -95,7 +97,7 @@ const createOverviewSection = async (
   const overviewPlayButton = document.createElement("button");
   overviewPlayButton.className = "play-trailer-button";
   const playButtonImg = document.createElement("img");
-  playButtonImg.className = "play-button-icon";
+  playButtonImg.className = "play-trailer-button-icon";
   playButtonImg.src = `${playButton}`;
   const playButtonText = document.createElement("p");
   playButtonText.textContent = "Play";
@@ -161,10 +163,9 @@ const displayOverview = (
       tvShowID,
       event
     );
-    
-      event.target.previousElementSibling.style.transform = 'scale(1)';
-      document.querySelector(".overview-section").scrollIntoView();
-    
+
+    event.target.previousElementSibling.style.transform = "scale(1)";
+    document.querySelector(".overview-section").scrollIntoView();
   } else {
     createOverviewSection(
       tvShowName,
@@ -173,10 +174,9 @@ const displayOverview = (
       tvShowID,
       event
     );
-    
-    event.target.previousElementSibling.style.transform = 'scale(1)';
+
+    event.target.previousElementSibling.style.transform = "scale(1)";
     document.querySelector(".overview-section").scrollIntoView();
-    
   }
 };
 export {
