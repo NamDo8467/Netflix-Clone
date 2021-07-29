@@ -10,7 +10,7 @@ import PopularTvShows from "./PopularTvShows/PopularTvShows";
 import FamilyTvShows from "./FamilyTvShows/FamilyTvShows";
 import ComedyTvShows from "./ComedyTvShows/ComedyTvShows";
 import { playTrailer } from "../Helpers/Helpers";
-
+import "./TvShows.css";
 function TvShows() {
   let history = useHistory();
 
@@ -49,8 +49,20 @@ function TvShows() {
               />
             </a>
             <ul>
-              <li><a style={{color:'white'}}href="/tvshows">TV Show</a></li>
-              <li> <a style={{color:'white', textDecoration:'none'}} href="/movies">Movies</a></li>
+              <li>
+                <a style={{ color: "white" }} href="/tvshows">
+                  TV Show
+                </a>
+              </li>
+              <li>
+                {" "}
+                <a
+                  style={{ color: "white", textDecoration: "none" }}
+                  href="/movies"
+                >
+                  Movies
+                </a>
+              </li>
             </ul>
             <img className="user-icon" src={userIcon} alt="use icon" />
           </nav>
