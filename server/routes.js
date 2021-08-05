@@ -35,7 +35,7 @@ const handleError = (err) => {
 };
 
 const createToken = (id) => {
-  const maxAge = 1 * 24 * 60 * 60;
+  const maxAge = 2 * 60 * 60;
   return jwt.sign({ id }, "netflix secret key", {
     expiresIn: maxAge,
   });
@@ -48,7 +48,7 @@ route.post("/signup", async (req, res) => {
     const token = createToken(user._id);
     res
       .cookie("cookie", token, {
-        maxAge: 1 * 24 * 60 * 60 * 1000,
+        maxAge: 2* 60 * 60 * 1000,
         httpOnly: true,
       })
       .send({ message: "Successfully signed up" });
@@ -71,19 +71,25 @@ route.post("/login", async (req, res) => {
       throw Error("Incorrect password");
     } else {
       const jwtAuth = createToken(user._id);
-      res
-        .cookie("cookie", jwtAuth, {
-          maxAge: 1 * 24 * 60 * 60 * 1000,
-          httpOnly: true,
-        })
-        .send({ message: "logged in " });
+      res.cookie("cookie", jwtAuth, {
+        maxAge: 2 * 60 * 60 * 1000,
+        httpOnly: true,
+      });
+      res.cookie("name", user.name, {
+        maxAge: 2 * 60 * 60 * 1000,
+      });
+      res.send({ message: "logged in " });
     }
   } catch (err) {
     const errors = handleError(err);
     res.status(400).send(errors);
   }
 });
-
+route.post('/logout', (req, res) => {
+  res.cookie('cookie','', { maxAge: 1 })
+  res.cookie('name', '', { maxAge: 1 })
+  res.send('Logged out')
+})
 route.get("/movies", verifyCookie, (req, res) => {
   res.status(201).send({ message: "Verified" });
 });
