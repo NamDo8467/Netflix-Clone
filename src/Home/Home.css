@@ -1,7 +1,5 @@
 .section1 {
   position: relative;
-  height: 850px;
-  border: 1px solid #313131;
   color: white;
   display: flex;
   flex-direction: column;
@@ -20,10 +18,10 @@
 }
 .intro {
   margin-top: 100px;
-  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .headers,
@@ -31,16 +29,9 @@
   position: relative;
 }
 .headers h1 {
-  font-size: 50px;
-  padding: 0px 175px;
   text-align: center;
   max-width: 640px;
   color: white;
-}
-.headers h2 {
-  font-size: 25px;
-  padding: 0px 60px;
-  text-align: center;
 }
 
 .try-30-days-free {
@@ -50,24 +41,20 @@
 }
 .try-30-days-free p {
   font-size: 18px;
-  font-weight: 700px;
   color: white;
+  text-align: center;
 }
 .try-30-days-free div {
   display: flex;
   margin: 0 auto;
 }
-
-.try-30-days-free .try-30-days-input,
+.try-30-days .try-30-days-input,
 .try-30-days-button {
   display: inline-block;
-  padding: 10px 15px;
-  font-size: 20px;
   border-radius: 0;
   min-height: 30px;
 }
 .try-30-days-free .try-30-days-input {
-  min-width: 400px;
   border: 1px solid lightgray;
 }
 .try-30-days-free .try-30-days-input:focus {
@@ -92,20 +79,15 @@
   background-color: black;
   align-items: center;
   height: 500px;
-  margin: 7px 0px;
+  margin: 5px 0px;
 }
-.title {
-  max-width: 500px;
-  margin: 50px;
-  margin: 100px;
-}
+
 .title h1 {
   color: white;
   font-size: 50px;
 }
 .title h2 {
   font-weight: 400;
-  font-size: 25px;
   color: white;
 }
 
@@ -118,28 +100,30 @@
   padding-left: 50px;
 }
 
-.section7 {
+.section6 {
   display: flex;
   flex-direction: column;
   align-items: center;
   background: black;
-  height: 800px;
+  height: 850px;
 }
 
 .faqs-title {
   color: white;
-  font-size: 50px;
+  text-align: center;
+  margin-top: 50px;
+}
+.question-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .question {
   background: #303030;
-  padding: 0.4em 2.2em 0.4em 1.2em;
   margin-bottom: 7px;
-  font-weight: 400px;
   color: white;
   width: 100%;
   text-align: left;
-  max-width: 500px;
-  min-width: 800px;
   font-size: x-large;
   display: flex;
   justify-content: space-between;
@@ -158,19 +142,15 @@
 .answer {
   display: none;
   color: white;
-  padding: 0.8em 2.2em 0.8em 1.2em;
   margin-top: -5.5px;
   margin-bottom: 7px;
   background: #303030;
-  max-width: 500px;
-  min-width: 800px;
-  font-size: x-large;
 }
 
-.section8 {
+.section7 {
   margin-top: 7px;
 }
-.section8 footer {
+.section7 footer {
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -180,39 +160,36 @@
   background-color: black;
   font-weight: 700px;
 }
-.section8 p {
-  margin-left: 200px;
+.section7 p {
   margin-top: 0;
-  font-size: 18px;
+  margin-left: 100px;
 }
-.section8 p a {
+.section7 p a {
   text-decoration: none;
   color: #757575;
 }
-.section8 p a:hover {
+.section7 p a:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-.section8 ul {
-  margin-left: 200px;
+.section7 ul {
   margin-top: 0;
-  min-width: 700px;
   min-height: 200px;
   padding: 0;
   text-align: left;
   display: flex;
   justify-content: space-between;
 }
-.section8 ul li {
+.section7 ul li {
   list-style: none;
   margin: 20px 0;
 }
-.section8 ul li a {
+.section7 ul li a {
   text-decoration: none;
   color: #757575;
-  font-size: 15px;
+  font-size: 12px;
 }
-.section8 ul li a:hover {
+.section7 ul li a:hover {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -223,62 +200,42 @@
   }
   .intro {
     margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
   }
 
   .headers h1 {
     font-size: 30px;
-    padding: 0px 50px;
-    color: white;
-    min-width: 400px;
+    padding: 0px 20px;
+    max-width: 640px;
   }
   .headers h2 {
     font-size: 20px;
-    font-weight: 20;
-    padding: 0px 50px;
+    font-weight: 10;
+    padding: 0px 20px;
     text-align: center;
     margin: 0;
   }
   .try-30-days-free p {
-    font-size: 20px;
     font-weight: 20;
     width: 50%;
-    color: white;
-    text-align: center;
     min-width: 350px;
   }
   .try-30-days-free div {
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .try-30-days-free .try-30-days-input,
-  .try-30-days-button {
-    display: inline-block;
-    padding: 10px 15px;
-    font-size: 15px;
-    min-height: 30px;
-  }
   .try-30-days-free .try-30-days-input {
+    padding: 18px 5px;
     min-width: 300px;
-    border: 1px solid lightgray;
   }
-  .try-30-days-free .try-30-days-input:focus {
-    outline: none;
-    border-color: black;
-  }
+
   .try-30-days-free .try-30-days-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid transparent;
-    background-color: red;
-    color: white;
     margin-top: 20px;
-    width: 50%;
+    width: 40%;
+    justify-content: center;
+    padding: 10px 3px;
+    font-size: 15px;
   }
   .try-30-days-free .try-30-days-button img {
     height: 15px;
@@ -286,11 +243,9 @@
   }
 
   .sections-common-things {
-    display: flex;
     flex-direction: column;
     padding: 0 20px;
     justify-content: flex-start;
-    align-items: center;
   }
   .sections-common-things img {
     height: 250px;
@@ -303,15 +258,11 @@
     text-align: center;
   }
   .title h1 {
-    color: white;
     font-size: 30px;
   }
   .title h2 {
-    font-weight: 50px;
     font-size: 20px;
-    color: white;
   }
-
   .section3 .mobile-image {
     height: 200px !important;
     width: 130px !important;
@@ -322,166 +273,117 @@
   .section3 .title {
     order: 1;
   }
-  .faqs {
-    height: 850px;
-  }
   .faqs .faqs-title {
     font-size: 30px;
     max-width: 300px;
-    text-align: center;
-    margin-top: 50px;
-  }
-  .faqs .questions-answers-container .question-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .faqs .questions-answers-container .question-container .question {
-    background: #303030;
     padding: 0.2em 2em 0.2em 1em;
-    margin-bottom: 7px;
     font-weight: 200px;
-    color: white;
     max-width: 300px;
     min-width: 200px;
     font-size: large;
   }
   .faqs .questions-answers-container .question-container .answer {
-    display: none;
-    color: white;
     padding: 0.4em 2em 0.4em 1em;
-    margin-top: -5.5px;
-    margin-bottom: 7px;
-    background: #303030;
     max-width: 300px;
     min-width: 200px;
     font-size: large;
-    font-weight: 200px;
   }
 
-  .section8 footer {
+  .section7 footer {
     padding: 50px 0px 0px 0px;
-    background-color: black;
-    font-weight: 500px;
   }
-
-  .section8 p {
-    margin-left: 100px;
+  .section7 p {
+    margin-left: 20px;
+    font-weight: 200;
   }
-
-  .section8 ul {
-    margin-left: 100px;
-    margin-top: 0;
-    min-width: 200px;
-    padding: 0;
-    text-align: left;
+  .section7 ul {
+    max-width: 350px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
+  }
+
+  .section7 ul li a {
+    font-weight: 100;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .section1 {
-    height: 700px;
+    height: 600px;
   }
   .intro {
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin-top: 40px;
+    align-items: center;
   }
 
   .headers h1 {
-    font-size: 47px;
-    padding: 0px 50px;
-    color: white;
-    min-width: 400px;
+    font-size: 40px;
+    padding: 0px 20px;
+    max-width: 600px;
   }
   .headers h2 {
     font-size: 25px;
-    font-weight: 20;
-    padding: 0px 50px;
+    font-weight: 10;
+    padding: 0px 15px;
     text-align: center;
-    margin: -20px 0 0 0;
+    margin: 0;
   }
   .try-30-days-free p {
-    font-size: 25px;
+    font-weight: 10;
     width: 50%;
-    color: white;
-    text-align: center;
-    min-width: 582px;
+    min-width: 350px;
   }
   .try-30-days-free div {
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .try-30-days-free .try-30-days-input,
-  .try-30-days-button {
-    display: inline-block;
-    min-height: 30px;
-  }
   .try-30-days-free .try-30-days-input {
-    font-size: 18px;
     min-width: 500px;
-    padding: 15px 15px;
-    border: 1px solid lightgray;
-  }
-  .try-30-days-free .try-30-days-input:focus {
-    outline: none;
-    border-color: black;
-  }
-  .try-30-days-free .try-30-days-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid transparent;
-    background-color: red;
-    color: white;
-    margin-top: 15px;
-    font-size: medium;
-    min-width: 100px;
+    padding: 20px 5px;
+    font-size: 18px;
   }
 
+  .try-30-days-free .try-30-days-button {
+    margin-top: 20px;
+    width: 25%;
+    font-size: 16px;
+    justify-content: center;
+    padding: 10px 5px;
+  }
   .try-30-days-free .try-30-days-button img {
     height: 15px;
     margin-left: 5px;
   }
 
   .sections-common-things {
-    display: flex;
     flex-direction: column;
-    padding: 0px 10px;
+    padding: 0 10px;
     justify-content: flex-start;
   }
   .sections-common-things img {
     height: 280px;
-    width: 480px;
+    width: 450px;
   }
 
   .title {
-    max-width: 650px;
+    max-width: 700px;
     margin: 25px 0 0 0;
     text-align: center;
   }
   .title h1 {
-    color: white;
     font-size: 40px;
+    margin-bottom: 0;
   }
   .title h2 {
-    font-weight: 50px;
     font-size: 20px;
-    color: white;
-  }
-
-  .section3 {
-    padding-bottom: 100px;
   }
   .section3 .mobile-image {
-    height: 300px !important;
-    width: 200px !important;
+    height: 250px !important;
+    width: 180px !important;
   }
   .section3 .image {
     order: 2;
@@ -489,221 +391,106 @@
   .section3 .title {
     order: 1;
   }
-  .faqs {
-    height: 850px;
-  }
   .faqs .faqs-title {
     font-size: 40px;
-    max-width: 550px;
-    text-align: center;
-    margin-top: 50px;
+    max-width: 600px;
   }
-  .faqs .questions-answers-container .question-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .faqs .questions-answers-container .question-container .question {
-    background: #303030;
     padding: 0.2em 2em 0.2em 1em;
-    margin-bottom: 7px;
-    font-weight: 200px;
-    color: white;
     max-width: 600px;
     min-width: 550px;
-    font-size: large;
+    font-size: 20px;
   }
   .faqs .questions-answers-container .question-container .answer {
-    display: none;
-    color: white;
-    padding: 1.5em 2em 1.5em 1em;
-    margin-top: -5.5px;
-    margin-bottom: 7px;
-    background: #303030;
+    padding: 0.4em 2em 0.4em 1em;
     max-width: 600px;
     min-width: 550px;
-    font-size: large;
-    font-weight: 400px;
+    font-size: 20px;
   }
 
-  .section8 footer {
+  .section7 footer {
     padding: 50px 0px 0px 0px;
-    background-color: black;
-    font-weight: 500px;
   }
 
-  .section8 p {
-    margin-left: 60px;
-    font-size: 17px;
+  .section7 ul {
+    margin-left: 100px;
+    max-width: 650px;
   }
-
-  .section8 ul {
-    display: grid;
-
-    margin-left: 60px;
-    margin-top: 0;
-    min-width: 600px;
-    padding: 0;
-    text-align: left;
-    display: flex;
-
-    justify-content: space-between;
+  .section7 ul li {
+    margin-right: 45px;
   }
-  .section8 ul li a {
-    font-size: 15px;
+  .section7 ul li a {
+    font-weight: 100;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .section1 {
-    height: 700px;
+    height: 750px;
   }
 
-  .intro {
-    margin-top: 50px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .headers,
+  .try-30-days-free {
+    position: relative;
+  }
+  .headers h1 {
+    font-size: 50px;
+    padding: 0px 175px;
   }
   .headers h2 {
-    margin-top: -20px;
+    font-size: 25px;
+    padding: 0px 60px;
+    text-align: center;
+    font-weight: normal;
   }
 
-  .try-30-days-free {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .try-30-days-free p {
+  .try-30-days-free .try-30-days-input {
+    min-width: 450px;
+    padding: 20px 10px;
     font-size: 18px;
   }
-  .try-30-days-free div {
-    display: flex;
-    margin: 0 auto;
-  }
-
-  .try-30-days-free .try-30-days-input,
-  .try-30-days-button {
-    display: inline-block;
-    padding: 14px 25px;
-    font-size: 20px;
-    border-radius: 0;
-    min-height: 30px;
-  }
-  .try-30-days-free .try-30-days-input {
-    min-width: 400px;
-    border: 1px solid lightgray;
-  }
-  .try-30-days-free .try-30-days-input:focus {
-    outline: none;
-    border-color: black;
-  }
   .try-30-days-free .try-30-days-button {
-    display: flex;
-    align-items: center;
-    border: 1px solid transparent;
-    background-color: red;
-    color: white;
+    min-width: 200px;
+    justify-content: space-between;
+    padding: 15px 15px;
     font-size: 25px;
   }
-
-  .sections-common-things {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: black;
-    align-items: center;
-    height: 400px;
-    margin: 7px 0px;
-  }
-
-  .sections-common-things img {
-    height: 280px;
-    width: 480px;
-    justify-self: flex-end;
-    margin-right: -20px;
-    margin-left: 0px;
+  .try-30-days-free .try-30-days-button:hover {
+    cursor: pointer;
+    opacity: 0.9;
   }
 
   .title {
-    max-width: 450px;
-    margin: 25px 0 0 0;
+    max-width: 500px;
+    margin: 50px;
+    margin: 100px;
   }
-  .title h1 {
-    color: white;
+
+  .faqs-title {
     font-size: 50px;
-    text-align: left;
   }
-  .title h2 {
-    font-weight: 50px;
-    font-size: 25px;
-    color: white;
-    text-align: left;
-    margin-top: -20px;
+  .question {
+    padding: 0.4em 2.2em 0.4em 1.2em;
+    font-weight: 400px;
+    max-width: 500px;
+    min-width: 800px;
   }
-  .section3 {
-    display: flex;
-    justify-content: space-around;
+  .answer {
+    padding: 0.8em 2.2em 0.8em 1.2em;
+    max-width: 500px;
+    min-width: 800px;
+    font-size: x-large;
   }
-  .section3 .mobile-image {
-    height: 300px !important;
-    width: 200px !important;
-  }
-
-  .section4 {
-    display: flex;
-    justify-content: flex-start;
-    background-color: black;
-    height: 250px;
-    align-items: flex-start;
-    padding-left: 50px;
-  }
-  .section6 {
-    display: flex;
-    justify-content: space-around;
-  }
-  .section7 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: black;
-    height: 800px;
-  }
-
-  .section8 {
-    margin-top: 7px;
-  }
-  .section8 footer {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding: 70px 0px 100px 0px;
-    background-color: black;
-    font-weight: 700px;
-  }
-  .section8 p {
-    margin-left: 100px;
-    margin-top: 0;
+  .section7 p {
+    margin-left: 150px;
     font-size: 18px;
   }
-
-  .section8 ul {
-    margin-left: 100px;
-    margin-top: 0;
+  .section7 ul {
+    margin-left: 150px;
     min-width: 700px;
-    min-height: 200px;
-    padding: 0;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
   }
 
-  .section8 ul li a {
-    text-decoration: none;
-    color: #757575;
-    font-size: 15px;
+  .section7 ul li a {
+    font-weight: 100;
   }
 }
