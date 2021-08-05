@@ -24,10 +24,10 @@ function Login() {
         },
         { withCredentials: true }
       );
-      
-        
+
+      if (result.data.message == "logged in ") {
         history.push("/tvshows");
-      
+      } 
     } catch (error) {
       console.log(error);
       const login_error = error.response.data;
@@ -99,7 +99,6 @@ function Login() {
           <div className="signup-now">
             New to Netflix?
             <a href="/signup">Sign up now</a>
-            
           </div>
         </div>
       </div>
