@@ -1,6 +1,9 @@
 import axios from "axios";
 import playButton from "../images/play-button-icon.png";
 import closeButton from "../images/close_icon.png";
+import userIcon from "../images/userIcon.png";
+
+const screenWidth = window.screen.width;
 
 const playTrailer = (videoID = `XZ8daibM3AE`) => {
   const iframeContainer = document.createElement("div");
@@ -42,6 +45,8 @@ const playTrailer = (videoID = `XZ8daibM3AE`) => {
 };
 
 const displayDetailsButton = (e) => {
+  // const EventListenerMode = { capture: true };
+
   e.target.style.transform = "scale(1.2)";
   e.target.style.transition = "transform 0.3s ease-out, opacity 0.3s ease-out";
   e.target.style.opacity = "0.9";
@@ -49,15 +54,21 @@ const displayDetailsButton = (e) => {
   const detail = e.target.nextSibling;
   detail.style.opacity = "1";
   detail.style.transition = "opacity 0.5s ease-out";
+
+  if (screenWidth <= 800) {
+    setTimeout(() => {
+      closeDetailsButton(e);
+    }, 700);
+  }
 };
 const closeDetailsButton = (e) => {
   e.target.style.transform = "scale(1)";
   e.target.style.transition = "transform 0.3s ease-out";
   e.target.style.opacity = "1";
 
-  const detail = e.target.nextSibling;
-  detail.style.opacity = "0 ";
-  detail.style.transition = "opacity 0.5s ease-out";
+  const detailButton = e.target.nextSibling;
+  detailButton.style.opacity = "0 ";
+  detailButton.style.transition = "opacity 0.5s ease-out";
 };
 
 const hoverOverDetailsButton = (e) => {
@@ -69,10 +80,6 @@ const hoverOverDetailsButton = (e) => {
     "transform 0.5s ease-out, opacity 0.5s ease-out";
 };
 
-const leaveDetailButton = (e) => {
-  e.target.style.opacity = "0";
-  e.target.style.transition = "opacity 0.3s ease-out";
-};
 const createOverviewSection = async (
   tvShowName,
   tvShowOverview = "No review",
@@ -80,7 +87,7 @@ const createOverviewSection = async (
   tvShowID,
   event
 ) => {
-  const overviewSection = document.createElement("div");
+  const overviewSection = document.createElement("section");
   overviewSection.className = "overview-section";
 
   const overview = document.createElement("div");
@@ -101,7 +108,6 @@ const createOverviewSection = async (
   playButtonImg.src = `${playButton}`;
   const playButtonText = document.createElement("p");
   playButtonText.textContent = "Play";
-  playButtonText.style.fontSize = "20px";
 
   overviewPlayButton.appendChild(playButtonImg);
   overviewPlayButton.appendChild(playButtonText);
@@ -119,9 +125,13 @@ const createOverviewSection = async (
   overviewCloseButton.className = "close-overview-button";
   overviewCloseButton.src = `${closeButton}`;
 
+  const imageAndCloseButton = document.createElement("div");
+  imageAndCloseButton.className = "image-and-close-button";
+  imageAndCloseButton.appendChild(overviewImage);
+  imageAndCloseButton.appendChild(overviewCloseButton);
+
   overviewSection.appendChild(overview);
-  overviewSection.appendChild(overviewImage);
-  overviewSection.appendChild(overviewCloseButton);
+  overviewSection.appendChild(imageAndCloseButton);
 
   event.target.parentNode.parentNode.parentNode.after(overviewSection);
 
@@ -163,8 +173,9 @@ const displayOverview = (
       tvShowID,
       event
     );
-
+    event.target.style.opacity = "0";
     event.target.previousElementSibling.style.transform = "scale(1)";
+
     document.querySelector(".overview-section").scrollIntoView();
   } else {
     createOverviewSection(
@@ -174,17 +185,41 @@ const displayOverview = (
       tvShowID,
       event
     );
-
+    event.target.style.opacity = "0";
     event.target.previousElementSibling.style.transform = "scale(1)";
+
     document.querySelector(".overview-section").scrollIntoView();
   }
 };
+
+const displayLogout = () => {
+  const logoutContainer = document.querySelector(".logout");
+  if (screenWidth <= 800) {
+    logoutContainer.style.visibility = "visible";
+    setTimeout(() => {
+      logoutContainer.style.visibility = "hidden";
+    }, 1000);
+  } else {
+    if (logoutContainer.style.visibility == "visible") {
+      logoutContainer.style.visibility = "hidden";
+    } else {
+      logoutContainer.style.visibility = "visible";
+    }
+  }
+};
+
+const addDefaultSrc = (event) => {
+  event.target.src = `${userIcon}`;
+};
+const clickToDisplayDetail = () => {};
 export {
+  screenWidth,
   displayDetailsButton,
   closeDetailsButton,
   createOverviewSection,
   displayOverview,
   hoverOverDetailsButton,
-  leaveDetailButton,
   playTrailer,
+  displayLogout,
+  addDefaultSrc,
 };
