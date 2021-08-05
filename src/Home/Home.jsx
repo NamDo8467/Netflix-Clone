@@ -6,26 +6,28 @@ import kidImage from "../images/kid.png";
 import tvImage from "../images/tv.png";
 
 import NavBar from "../NavBar/NavBar";
-//cc803c8c2a7e8fddea1b3ff64514f0b4
 function Home() {
-    const showAnswer = (answerNumber, plusIconNumber) => {
+  const showAnswer = (answerNumber, plusIconNumber) => {
     const section7 = document.querySelector(".section7");
     const answer = document.querySelector(`.${answerNumber}`);
     const plusIcon = document.querySelector(`.${plusIconNumber}`);
-    
-    if (answer.style.display == "" || answer.style.display == "none") {
+
+    if (answer.style.display === "" || answer.style.display === "none") {
       answer.style.display = "block";
-      section7.style.height = `${section7.offsetHeight+answer.offsetHeight}px`
-      console.log(answer.offsetHeight); 
+      section7.style.height = `${
+        section7.offsetHeight + answer.offsetHeight
+      }px`;
+      console.log(answer.offsetHeight);
 
       plusIcon.style.transform = "rotate(-45deg)";
 
       plusIcon.style.transition = "transform";
     } else {
-
       plusIcon.style.transform = "rotate(90deg)";
       plusIcon.style.transition = "transform";
-      section7.style.height = `${section7.offsetHeight-answer.offsetHeight}px`
+      section7.style.height = `${
+        section7.offsetHeight - answer.offsetHeight
+      }px`;
 
       answer.style.display = "none";
     }
@@ -43,11 +45,14 @@ function Home() {
           </div>
           <div className="try-30-days-free">
             <p>
-              Ready to watch? Enter your email to create or restart your
-              membership.
+              Ready to watch? Enter your email to create or try 30 for free.
             </p>
             <div>
-              <input className="try-30-days-input" type="text" placeholder="Email address..." />
+              <input
+                className="try-30-days-input"
+                type="text"
+                placeholder="Email address..."
+              />
               <button className="try-30-days-button">
                 Get Started
                 <img src={rightArrow} alt="right arrow" height="25px" />
@@ -90,7 +95,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="section6 sections-common-things">
+      <section className="section5 sections-common-things">
         <div className="image">
           <img className="kid-image" src={kidImage} alt="kid" />
         </div>
@@ -103,7 +108,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="section7 faqs">
+      <section className="section6 faqs">
         <div>
           <h1 className="faqs-title">Frequently Asked Questions</h1>
         </div>
@@ -225,8 +230,12 @@ function Home() {
             membership.
           </p>
           <div>
-            <input type="text" placeholder="Email address..." />
-            <button>
+            <input
+              className="try-30-days-input"
+              type="text"
+              placeholder="Email address..."
+            />
+            <button className="try-30-days-button">
               Get Started
               <img src={rightArrow} alt="right arrow" height="25px" />
             </button>
@@ -234,63 +243,63 @@ function Home() {
         </div>
       </section>
 
-      <section className="section8">
+      <section className="section7">
         <footer className="footer">
           <p>
-            <a>Questions? Contact us.</a>
+            <a href="#">Questions? Contact us.</a>
           </p>
           <ul>
             <div>
               <li>
-                <a>FAQ</a>
+                <a href="#">FAQ</a>
               </li>
               <li>
-                <a>Investor Relation</a>
+                <a href="/">Investor Relation</a>
               </li>
               <li>
-                <a>Privacy</a>
+                <a href="/">Privacy</a>
               </li>
               <li>
-                <a>Speed Test</a>
-              </li>
-            </div>
-            <div>
-              <li>
-                <a>Help Center</a>
-              </li>
-              <li>
-                <a>Jobs</a>
-              </li>
-              <li>
-                <a>Cookies Preferences</a>
-              </li>
-              <li>
-                <a>Legal Notices</a>
+                <a href="#">Speed Test</a>
               </li>
             </div>
             <div>
               <li>
-                <a>Account</a>
+                <a href="#">Help Center</a>
               </li>
               <li>
-                <a>Ways to watch</a>
+                <a href="#">Jobs</a>
               </li>
               <li>
-                <a>Corporate Information</a>
+                <a href="#">Cookies Preferences</a>
               </li>
               <li>
-                <a>Only On Netflix</a>
+                <a href="#">Legal Notices</a>
               </li>
             </div>
             <div>
               <li>
-                <a>Media Center</a>
+                <a href="#">Account</a>
               </li>
               <li>
-                <a>Terms of Use</a>
+                <a href="#">Ways to watch</a>
               </li>
               <li>
-                <a>Contact Us</a>
+                <a href="#">Corporate Information</a>
+              </li>
+              <li>
+                <a href="#">Only On Netflix</a>
+              </li>
+            </div>
+            <div>
+              <li>
+                <a href="#">Media Center</a>
+              </li>
+              <li>
+                <a href="#">Terms of Use</a>
+              </li>
+              <li>
+                <a href="#">Contact Us</a>
               </li>
             </div>
           </ul>
