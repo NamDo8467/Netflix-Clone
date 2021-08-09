@@ -1,0 +1,29 @@
+.tv-show-head::before {
+  content: '';
+  position: absolute;
+  /* background-image: url("../images/breaking_bad.jpg"); */
+  background-image: url('../images/breaking_bad.jpg');
+
+  background-size: cover;
+  /* background-attachment: fixed; */
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.7;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+  
+  
+  
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  
+  
+}
+
+@media only screen and (min-width: 991px) {
+  
+  
+}
