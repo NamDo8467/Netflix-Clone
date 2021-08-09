@@ -78,7 +78,7 @@ route.post("/login", async (req, res) => {
       res.cookie("name", user.name, {
         maxAge: 2 * 60 * 60 * 1000,
       });
-      res.header("Access-Control-Allow-Origin", "true");
+      res.header("Access-Control-Allow-Origin", "*");
       res.send({ message: "logged in " });
     }
   } catch (err) {
