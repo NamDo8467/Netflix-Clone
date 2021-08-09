@@ -8,7 +8,7 @@ const verifyCookie = require("./verifyCookie");
 require("dotenv").config();
 
 const app = express();
-app.use(cors({ origin: '*', credentials: true, optionsSuccessStatus: 200 }));
+app.use(cors({ origin: '*', optionsSuccessStatus: 200 }));
 
 app.use(cookieParser());
 
