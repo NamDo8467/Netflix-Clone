@@ -48,7 +48,7 @@ route.post("/signup", async (req, res) => {
     const token = createToken(user._id);
     res
       .cookie("cookie", token, {
-        maxAge: 2* 60 * 60 * 1000,
+        maxAge: 2 * 60 * 60 * 1000,
         httpOnly: true,
       })
       .send({ message: "Successfully signed up" });
@@ -78,6 +78,7 @@ route.post("/login", async (req, res) => {
       res.cookie("name", user.name, {
         maxAge: 2 * 60 * 60 * 1000,
       });
+      res.header("Access-Control-Allow-Origin", "true");
       res.send({ message: "logged in " });
     }
   } catch (err) {
@@ -85,11 +86,11 @@ route.post("/login", async (req, res) => {
     res.status(400).send(errors);
   }
 });
-route.post('/logout', (req, res) => {
-  res.cookie('cookie','', { maxAge: 1 })
-  res.cookie('name', '', { maxAge: 1 })
-  res.send('Logged out')
-})
+route.post("/logout", (req, res) => {
+  res.cookie("cookie", "", { maxAge: 1 });
+  res.cookie("name", "", { maxAge: 1 });
+  res.send("Logged out");
+});
 route.get("/movies", verifyCookie, (req, res) => {
   res.status(201).send({ message: "Verified" });
 });
