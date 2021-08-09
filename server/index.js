@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(route);
 app.get("/", (req, res) => {
-  res.send("Hello");
+  res.send("Hello. Server is up and running");
 });
 mongoose.connect(process.env.DB_CONNECTION_LINK, {
   useNewUrlParser: true,
