@@ -16,7 +16,7 @@ function Movies() {
   useEffect(() => {
     const source = axios.CancelToken.source();
     axios
-      .get("http://localhost:5500/movies", {
+      .get("https://netflixclone-1.herokuapp.com/movies", {
         withCredentials: true,
         cancelToken: source.token,
       })

@@ -4,7 +4,7 @@ import axios from "axios";
 import { displayLogout, hideLogout } from "../Helpers/Helpers";
 function Logout(props) {
   const logout = async () => {
-    await axios.post("http://localhost:5500/logout", "", {
+    await axios.post("https://netflixclone-1.herokuapp.com/logout", "", {
       withCredentials: true,
     });
     return null;
