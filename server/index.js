@@ -8,9 +8,9 @@ const verifyCookie = require("./verifyCookie");
 require("dotenv").config();
 
 const app = express();
-app.use(cookieParser());
+app.use(cors({ origin: '*', credentials: true, optionsSuccessStatus: 200 }));
 
-app.use(cors({ origin: '*', credentials: true }));
+app.use(cookieParser());
 
 app.use(express.json());
 
@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(route);
 app.get("/", (req, res) => {
-  res.send("Hello. Server is up and running");
+  res.send("Hello user. Server is up and running");
 });
 mongoose.connect(process.env.DB_CONNECTION_LINK, {
   useNewUrlParser: true,
