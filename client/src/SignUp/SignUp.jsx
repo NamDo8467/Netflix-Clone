@@ -16,7 +16,7 @@ function SignUp(props) {
     password_error.className = "password-error";
     try {
       const result = await axios.post(
-        "https://netflixclone-1.herokuapp.com/signup",
+        "https://whispering-plains-27657.herokuapp.com/signup",
         {
           name: name,
           email: email,

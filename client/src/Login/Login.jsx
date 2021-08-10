@@ -17,19 +17,27 @@ function Login() {
 
     try {
       const result = await axios.post(
-        "https://netflixclone-1.herokuapp.com/login",
+        "https://whispering-plains-27657.herokuapp.com/login",
         {
           email: email,
           password: password,
-        },
-        { withCredentials: true }
+        }, {
+          withCredentials:true
+        }     
       );
-
+      console.log(result.data.message)
       if (result.data.message == "logged in ") {
+        
         history.push("/tvshows");
-      } 
+      }
     } catch (error) {
-      console.log(error);
+      console.log(error)
+      console.log(error.response)
+
+      if (!error.response) {
+        console.log(error);
+        return
+      }
       const login_error = error.response.data;
       const email_input = document.querySelector(".email");
       const password_input = document.querySelector(".password");

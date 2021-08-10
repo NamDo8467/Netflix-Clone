@@ -16,7 +16,7 @@ function TvShows() {
   useEffect(() => {
     const source = axios.CancelToken.source();
     axios
-      .get("https://netflixclone-1.herokuapp.com/tvshows", {
+      .get("https://whispering-plains-27657.herokuapp.com/tvshows", {
         withCredentials: true,
         cancelToken: source.token,
       })
@@ -24,7 +24,7 @@ function TvShows() {
         setIsVerified(result.data.message);
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.response);
         // history.goBack();
       });
     if (isVerified == "Not verified") {

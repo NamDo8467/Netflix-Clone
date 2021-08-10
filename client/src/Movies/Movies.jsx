@@ -16,7 +16,7 @@ function Movies() {
   useEffect(() => {
     const source = axios.CancelToken.source();
     axios
-      .get("https://netflixclone-1.herokuapp.com/movies", {
+      .get("https://whispering-plains-27657.herokuapp.com/movies", {
         withCredentials: true,
         cancelToken: source.token,
       })
