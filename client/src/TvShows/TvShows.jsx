@@ -24,7 +24,7 @@ function TvShows() {
         setIsVerified(result.data.message);
       })
       .catch((error) => {
-        console.log(error.response);
+        console.log(error);
         // history.goBack();
       });
     if (isVerified == "Not verified") {
