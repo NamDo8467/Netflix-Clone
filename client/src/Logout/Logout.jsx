@@ -4,7 +4,7 @@ import axios from "axios";
 import { displayLogout, hideLogout } from "../Helpers/Helpers";
 function Logout(props) {
   const logout = async () => {
-    await axios.post("https://netflixclone-1.herokuapp.com/logout", "", {
+    await axios.post("https://whispering-plains-27657.herokuapp.com/logout", "", {
       withCredentials: true,
     });
     return null;
@@ -17,9 +17,10 @@ function Logout(props) {
       // onMouseEnter={displayLogout}
       // onMouseLeave={hideLogout}
     >
+      {/* document.cookie.split("=")[1].split("%20").join(" ") */}
       <div className="logout-user-info">
         <img className="logout-user-icon" src={userIcon} alt="user icon" />
-        <p>{document.cookie.split("=")[1].split("%20").join(" ")}</p>
+        <p>'User'</p>
       </div>
       <div className="logout-link">
         <a href="/" onClick={logout}>
