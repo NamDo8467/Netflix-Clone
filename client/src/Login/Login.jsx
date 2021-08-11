@@ -17,7 +17,7 @@ function Login() {
 
     try {
       const result = await axios.post(
-        "https://my-notflix.netlify.app/login",
+        "https://whispering-plains-27657.herokuapp.com/login",
         {
           email: email,
           password: password,
