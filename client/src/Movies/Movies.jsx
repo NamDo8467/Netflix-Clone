@@ -50,7 +50,8 @@ function Movies() {
           height: "100vh",
         }}
       >
-        Access denied
+        <p>Access denied</p>
+        <a href="/login">Login</a>
       </div>
     );
   }

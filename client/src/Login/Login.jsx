@@ -21,23 +21,28 @@ function Login() {
         {
           email: email,
           password: password,
-        }, {
-          withCredentials:true
-        }     
+        }
       );
-      localStorage.setItem('name', result.data.name)
-      console.log(document.cookie)
+      localStorage.setItem("name", result.data.name);
+      localStorage.setItem("cookie", result.data.jwtAuth);
+      let now = new Date();
+      now.setTime(now.getTime() + 1 * 3600 * 1000);
+      document.cookie = `cookie=${localStorage.getItem(
+        "cookie"
+      )};expires=${now.toUTCString()};path='/login'`;
+
+      localStorage.removeItem("cookie");
+
       if (result.data.message == "logged in ") {
-        
         history.push("/tvshows");
       }
     } catch (error) {
-      console.log(error)
-      console.log(error.response)
+      console.log(error);
+      console.log(error.response);
 
       if (!error.response) {
         console.log(error);
-        return
+        return;
       }
       const login_error = error.response.data;
       const email_input = document.querySelector(".email");

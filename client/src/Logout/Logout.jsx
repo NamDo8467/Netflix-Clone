@@ -4,10 +4,16 @@ import axios from "axios";
 import { displayLogout, hideLogout } from "../Helpers/Helpers";
 function Logout(props) {
   const logout = async () => {
-    await axios.post("https://whispering-plains-27657.herokuapp.com/logout", "", {
+    const result = await axios.post("https://whispering-plains-27657.herokuapp.com/logout", "", {
       withCredentials: true,
     });
-    return null;
+    if (result.data == 'Logged out') {
+      localStorage.removeItem('name')
+      document.cookie('cookie=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/')
+      return null;
+    }
+    
+    
   };
 
   return (
@@ -20,7 +26,7 @@ function Logout(props) {
       {/* document.cookie.split("=")[1].split("%20").join(" ") */}
       <div className="logout-user-info">
         <img className="logout-user-icon" src={userIcon} alt="user icon" />
-        <p>USER</p>
+        <p>{localStorage.getItem('name')}</p>
       </div>
       <div className="logout-link">
         <a href="/" onClick={logout}>
