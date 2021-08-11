@@ -16,12 +16,15 @@ function TvShows() {
   useEffect(() => {
     const source = axios.CancelToken.source();
     axios
-      .get("https://whispering-plains-27657.herokuapp.com/tvshows", {
+      .get("https://my-notflix.netlify.app/tvshows", {
         withCredentials: true,
         cancelToken: source.token,
       })
       .then((result) => {
         setIsVerified(result.data.message);
+        console.log(document.cookie)
+        console.log(localStorage.getItem('name'))
+
       })
       .catch((error) => {
         console.log(error);
