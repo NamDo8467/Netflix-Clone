@@ -17,7 +17,7 @@ function Login() {
 
     try {
       const result = await axios.post(
-        "https://whispering-plains-27657.herokuapp.com/login",
+        "https://my-notflix.netlify.app/login",
         {
           email: email,
           password: password,
@@ -25,7 +25,8 @@ function Login() {
           withCredentials:true
         }     
       );
-      console.log(result.data.message)
+      localStorage.setItem('name', result.data.name)
+      console.log(document.cookie)
       if (result.data.message == "logged in ") {
         
         history.push("/tvshows");
