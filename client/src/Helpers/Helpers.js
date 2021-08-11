@@ -154,7 +154,10 @@ const createOverviewSection = async (
   }
 
   overviewCloseButton.addEventListener("click", (e) => {
+    const targetSection = e.target.parentNode.parentNode.previousSibling.className
+    document.querySelector(`.${targetSection}`).scrollIntoView()
     document.querySelector(".overview-section").remove();
+    
   });
 };
 const displayOverview = (
