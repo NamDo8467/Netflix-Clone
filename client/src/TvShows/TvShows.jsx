@@ -16,7 +16,7 @@ function TvShows() {
   useEffect(() => {
     const source = axios.CancelToken.source();
     axios
-      .get("https://my-notflix.netlify.app/tvshows", {
+      .get("https://whispering-plains-27657.herokuapp.com/tvshows", {
         withCredentials: true,
         cancelToken: source.token,
       })
