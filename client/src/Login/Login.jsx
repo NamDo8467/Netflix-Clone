@@ -23,15 +23,15 @@ function Login() {
           password: password,
         }
       );
-      localStorage.setItem("name", result.data.name);
-      localStorage.setItem("cookie", result.data.jwtAuth);
-      let now = new Date();
-      now.setTime(now.getTime() + 1 * 3600 * 1000);
-      document.cookie = `cookie=${localStorage.getItem(
-        "cookie"
-      )};expires=${now.toUTCString()};path='/login'`;
+      // localStorage.setItem("name", result.data.name);
+      // localStorage.setItem("cookie", result.data.jwtAuth);
+      // let now = new Date();
+      // now.setTime(now.getTime() + 1 * 3600 * 1000);
+      // document.cookie = `cookie=${localStorage.getItem(
+      //   "cookie"
+      // )};expires=${now.toUTCString()};path='/login'`;
 
-      localStorage.removeItem("cookie");
+      // localStorage.removeItem("cookie");
 
       if (result.data.message == "logged in ") {
         history.push("/tvshows");
