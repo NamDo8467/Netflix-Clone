@@ -7,9 +7,11 @@ function Logout(props) {
     const result = await axios.post("https://whispering-plains-27657.herokuapp.com/logout", "", {
       withCredentials: true,
     });
-    if (result.data == 'Logged out') {
-      localStorage.removeItem('name')
-      document.cookie('cookie=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/')
+    console.log(result.data)
+    if (result.data == "Logged out") {
+      localStorage.removeItem("name")
+      localStorage.removeItem("cookie")
+      document.cookie('cookie=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/logout')
       return null;
     }
     
