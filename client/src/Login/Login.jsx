@@ -16,6 +16,7 @@ function Login() {
     password_error.className = "password-error";
     const loginButton = document.querySelector('.login-form-button')
     loginButton.disabled = true;
+    loginButton.style.backgroundColor = 'grey'
     
 
     try {
@@ -41,16 +42,18 @@ function Login() {
         history.push("/tvshows");
       }
 
-    } catch (error) {
-      console.log(error);
-      console.log(error.response);
-      alert("Error happened. Please come back later")
-
+    } catch (error) {      
       if (!error.response) {
+        alert("Error happened. Please come back later")
+        loginButton.disabled = false
+        loginButton.style.backgroundColor = 'red'
         console.log(error);
+        console.log(error.response);
         return;
       }
+      
       loginButton.disabled = false
+      loginButton.style.backgroundColor = 'red'
       const login_error = error.response.data;
       const email_input = document.querySelector(".email");
       const password_input = document.querySelector(".password");
@@ -99,7 +102,7 @@ function Login() {
             required
             className="password"
           />
-          <button className="login-form-button" onClick={login}>
+          <button type="button" className="login-form-button" onClick={login}>
             Sign In
           </button>
           <div className="login-form-help">
