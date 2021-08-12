@@ -21,6 +21,8 @@ function Login() {
         {
           email: email,
           password: password,
+        }, {
+          withCredentials:true
         }
       );
       localStorage.setItem("name", result.data.name);
@@ -34,7 +36,7 @@ function Login() {
       if (result.data.message == "logged in ") {
         history.push("/tvshows");
       }
-      
+
     } catch (error) {
       console.log(error);
       console.log(error.response);
