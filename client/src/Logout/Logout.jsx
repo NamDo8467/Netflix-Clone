@@ -4,7 +4,7 @@ import userIcon from "../images/userIcon.png";
 import axios from "axios";
 import { displayLogout, hideLogout } from "../Helpers/Helpers";
 function Logout(props) {
-  let history = useHistory()
+  let history = useHistory();
   const logout = async (e) => {
     e.preventDefault();
     const result = await axios.get(
@@ -12,16 +12,13 @@ function Logout(props) {
       "",
       {
         withCredentials: true,
-      
       }
     );
     console.log(result.data);
     localStorage.removeItem("name");
     localStorage.removeItem("cookie");
-    document.cookie(
-      "cookie=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/logout"
-    );
-    history.push('/')
+    document.cookie ="cookie=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/logout";
+    history.push("/");
   };
 
   return (
@@ -37,7 +34,7 @@ function Logout(props) {
         <p>{localStorage.getItem("name")}</p>
       </div>
       <div className="logout-link">
-        <a href="/" onClick={(e)=>logout(e)}>
+        <a href="/" onClick={(e) => logout(e)}>
           Sign out of Netflix
         </a>
       </div>

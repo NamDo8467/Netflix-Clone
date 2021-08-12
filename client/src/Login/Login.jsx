@@ -14,6 +14,9 @@ function Login() {
     email_error.className = "email-error";
     const password_error = document.createElement("p");
     password_error.className = "password-error";
+    const loginButton = document.querySelector('.login-form-button')
+    loginButton.disabled = true;
+    
 
     try {
       const result = await axios.post(
@@ -40,11 +43,13 @@ function Login() {
     } catch (error) {
       console.log(error);
       console.log(error.response);
+      alert("Error happened. Please come back later")
 
       if (!error.response) {
         console.log(error);
         return;
       }
+      loginButton.disabled = false
       const login_error = error.response.data;
       const email_input = document.querySelector(".email");
       const password_input = document.querySelector(".password");
