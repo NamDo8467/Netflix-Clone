@@ -32,9 +32,10 @@ function Login() {
       localStorage.setItem("cookie", result.data.jwtAuth);
       let now = new Date();
       now.setTime(now.getTime() + 1 * 3600 * 1000);
-      document.cookie = `cookie=${localStorage.getItem(
-        "cookie"
-      )};expires=${now.toUTCString()};path='/login'`;      
+      // document.cookie = `cookie=${localStorage.getItem(
+      //   "cookie"
+      // )};expires=${now.toUTCString()};path='/login'`;
+      document.cookie = `cookie=${localStorage.getItem("cookie")}; max-age=7200; path=/`;
 
       if (result.data.message == "logged in ") {
         history.push("/tvshows");

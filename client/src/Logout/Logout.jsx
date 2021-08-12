@@ -17,7 +17,8 @@ function Logout(props) {
     console.log(result.data);
     localStorage.removeItem("name");
     localStorage.removeItem("cookie");
-    document.cookie ="cookie=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/logout";
+    // document.cookie = "cookie=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/logout";
+    document.cookie ="cookie=; max-age=0; path=/";
     history.push("/");
   };
 
@@ -26,7 +27,7 @@ function Logout(props) {
       className="logout"
 
       // onMouseEnter={displayLogout}
-      // onMouseLeave={hideLogout}
+      // onMouseLeave={hideLogout}  
     >
       {/* document.cookie.split("=")[1].split("%20").join(" ") */}
       <div className="logout-user-info">
