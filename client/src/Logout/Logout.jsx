@@ -1,14 +1,18 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import userIcon from "../images/userIcon.png";
 import axios from "axios";
 import { displayLogout, hideLogout } from "../Helpers/Helpers";
 function Logout(props) {
-  const logout = async () => {
+  let history = useHistory()
+  const logout = async (e) => {
+    e.preventDefault();
     const result = await axios.get(
       "https://whispering-plains-27657.herokuapp.com/logout",
       "",
       {
         withCredentials: true,
+      
       }
     );
     console.log(result.data);
@@ -17,7 +21,7 @@ function Logout(props) {
     document.cookie(
       "cookie=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/logout"
     );
-    return null;
+    history.push('/')
   };
 
   return (
@@ -33,7 +37,7 @@ function Logout(props) {
         <p>{localStorage.getItem("name")}</p>
       </div>
       <div className="logout-link">
-        <a href="/" onClick={logout}>
+        <a href="/" onClick={(e)=>logout(e)}>
           Sign out of Netflix
         </a>
       </div>
