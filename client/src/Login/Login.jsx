@@ -32,6 +32,7 @@ function Login() {
       // )};expires=${now.toUTCString()};path='/login'`;
 
       // localStorage.removeItem("cookie");
+      console.log(result.data)
 
       if (result.data.message == "logged in ") {
         history.push("/tvshows");
