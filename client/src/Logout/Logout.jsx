@@ -4,7 +4,7 @@ import axios from "axios";
 import { displayLogout, hideLogout } from "../Helpers/Helpers";
 function Logout(props) {
   const logout = async () => {
-    const result = await axios.post("https://whispering-plains-27657.herokuapp.com/logout", "", {
+    const result = await axios.get("https://whispering-plains-27657.herokuapp.com/logout", "", {
       withCredentials: true,
     });
     console.log(result.data)
