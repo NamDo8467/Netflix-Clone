@@ -23,7 +23,7 @@ function TvShows() {
       .then((result) => {
         setIsVerified(result.data.message);
         // console.log(document.cookie)
-        console.log(localStorage.getItem('name'))
+        console.log(localStorage.getItem('cookie'))
 
       })
       .catch((error) => {
