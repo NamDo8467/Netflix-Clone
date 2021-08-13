@@ -22,13 +22,11 @@ function TvShows() {
       })
       .then((result) => {
         setIsVerified(result.data.message);
-        // console.log(document.cookie)
-        console.log(localStorage.getItem('cookie'))
 
       })
       .catch((error) => {
         console.log(error);
-        // history.goBack();
+        history.goBack();
       });
     if (isVerified == "Not verified") {
       return () => {
