@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-
 import "./Login.css";
 import axios from "axios";
 
@@ -14,10 +13,9 @@ function Login() {
     email_error.className = "email-error";
     const password_error = document.createElement("p");
     password_error.className = "password-error";
-    const loginButton = document.querySelector('.login-form-button')
+    const loginButton = document.querySelector(".login-form-button");
     loginButton.disabled = true;
-    loginButton.style.backgroundColor = 'grey'
-    
+    loginButton.style.backgroundColor = "grey";
 
     try {
       const result = await axios.post(
@@ -25,35 +23,34 @@ function Login() {
         {
           email: email,
           password: password,
-        }, {
-          withCredentials:true
+        },
+        {
+          withCredentials: true,
         }
       );
       localStorage.setItem("name", result.data.name);
       localStorage.setItem("cookie", result.data.jwtAuth);
       let now = new Date();
       now.setTime(now.getTime() + 1 * 3600 * 1000);
-      // document.cookie = `cookie=${localStorage.getItem(
-      //   "cookie"
-      // )};expires=${now.toUTCString()};path='/login'`;
-      document.cookie = `cookie=${localStorage.getItem("cookie")}; max-age=7200; path=/`;
+      document.cookie = `cookie=${localStorage.getItem(
+        "cookie"
+      )}; max-age=7200; path=/`;
 
       if (result.data.message == "logged in ") {
         history.push("/tvshows");
       }
-
-    } catch (error) {      
+    } catch (error) {
       if (!error.response) {
-        alert("Error happened. Please come back later")
-        loginButton.disabled = false
-        loginButton.style.backgroundColor = 'red'
+        alert("Error happened. Please come back later");
+        loginButton.disabled = false;
+        loginButton.style.backgroundColor = "red";
         console.log(error);
         console.log(error.response);
         return;
       }
-      
-      loginButton.disabled = false
-      loginButton.style.backgroundColor = 'red'
+
+      loginButton.disabled = false;
+      loginButton.style.backgroundColor = "red";
       const login_error = error.response.data;
       const email_input = document.querySelector(".email");
       const password_input = document.querySelector(".password");
