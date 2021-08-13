@@ -26,7 +26,7 @@ function TvShows() {
       })
       .catch((error) => {
         console.log(error);
-        history.goBack();
+        // history.goBack();
       });
     if (isVerified == "Not verified") {
       return () => {
@@ -49,6 +49,7 @@ function TvShows() {
         style={{
           backgroundColor: "white",
           height: "100vh",
+          marginLeft:"50px"
         }}
       >
         <p>Access denied</p>
