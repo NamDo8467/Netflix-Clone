@@ -8,25 +8,23 @@ import tvImage from "../images/tv.png";
 import NavBar from "../NavBar/NavBar";
 function Home() {
   const showAnswer = (answerNumber, plusIconNumber) => {
-    const section7 = document.querySelector(".section7");
+    const section6 = document.querySelector(".section6");
     const answer = document.querySelector(`.${answerNumber}`);
     const plusIcon = document.querySelector(`.${plusIconNumber}`);
 
     if (answer.style.display === "" || answer.style.display === "none") {
       answer.style.display = "block";
-      section7.style.height = `${
-        section7.offsetHeight + answer.offsetHeight
+      section6.style.height = `${
+        section6.offsetHeight + answer.offsetHeight
       }px`;
-      console.log(answer.offsetHeight);
-
       plusIcon.style.transform = "rotate(-45deg)";
 
       plusIcon.style.transition = "transform";
     } else {
       plusIcon.style.transform = "rotate(90deg)";
       plusIcon.style.transition = "transform";
-      section7.style.height = `${
-        section7.offsetHeight - answer.offsetHeight
+      section6.style.height = `${
+        section6.offsetHeight - answer.offsetHeight
       }px`;
 
       answer.style.display = "none";
@@ -37,7 +35,6 @@ function Home() {
     <>
       <section className="section1">
         <NavBar />
-
         <div className="intro">
           <div className="headers">
             <h1>Unlimited movies, TV shows, and more.</h1>
