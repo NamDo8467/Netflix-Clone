@@ -71,38 +71,36 @@ route.post("/login", async (req, res) => {
       throw Error("Incorrect password");
     } else {
       const jwtAuth = createToken(user._id);
+
       res.cookie("cookie", jwtAuth, {
         maxAge: 2 * 60 * 60 * 1000,
-        httpOnly: true,
+        sameSite: "none",
+        secure: true,
+        httpOnly: true
       });
       res.cookie("name", user.name, {
         maxAge: 2 * 60 * 60 * 1000,
+        sameSite: "none",
+        secure: true,
       });
-      res.setHeader("Access-Control-Allow-Origin", "*");
-      res.setHeader("Access-Control-Allow-Credentials", "true");
-      res.setHeader("Access-Control-Max-Age", "1800");
-      res.setHeader("Access-Control-Allow-Headers", "content-type");
-      res.setHeader(
-        "Access-Control-Allow-Methods",
-        "PUT, POST, GET, DELETE, PATCH, OPTIONS"
-      );
-      res.send({ message: "logged in " });
+
+      res.status(200).send({ message: "logged in ", name: user.name, jwtAuth:jwtAuth });
     }
   } catch (err) {
     const errors = handleError(err);
     res.status(400).send(errors);
   }
 });
-route.post("/logout", (req, res) => {
+route.get("/logout", (req, res) => {
   res.cookie("cookie", "", { maxAge: 1 });
   res.cookie("name", "", { maxAge: 1 });
   res.send("Logged out");
 });
-route.get("/movies", verifyCookie, (req, res) => {
+route.get("/movies", (req, res) => {
   res.status(201).send({ message: "Verified" });
 });
 
-route.get("/tvshows", verifyCookie, (req, res) => {
+route.get("/tvshows", (req, res) => {
   res.status(201).send({ message: "Verified" });
 });
 
