@@ -12,51 +12,53 @@ function ActionMovies() {
     const link = `https://api.themoviedb.org/3/discover/movie?api_key=cc803c8c2a7e8fddea1b3ff64514f0b4&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=28&with_watch_monetization_types=flatrate`;
     getMovies(link, setMovies);
   }, [setMovies]);
-
+  console.log(movies);
   return (
     <section className="action-movies">
       <h3 className="category">Action</h3>
       <div className="movies">
         {movies.map((movie) => {
-          <div key={movie.id} className="movie-card">
-            {helper.screenWidth <= 800 ? (
-              <img
-                className="movie-poster"
-                src={`https://image.tmdb.org/t/p/w500/${
-                  movie.poster_path ? movie.poster_path : movie.backdrop_path
-                }`}
-                alt="Movie poster"
-                title={`${movie.name}`}
-                onTouchStart={helper.displayDetailsButton}
-              />
-            ) : (
-              <img
-                className="movie-poster"
-                src={`https://image.tmdb.org/t/p/w500/${
-                  movie.poster_path ? movie.poster_path : movie.backdrop_path
-                }`}
-                alt="Movie poster"
-                title={`${movie.name}`}
-                onMouseEnter={helper.displayDetailsButton}
-                onMouseLeave={helper.closeDetailsButton}
-              />
-            )}
-            <button
-              className="detail-button"
-              onClick={(event) => {
-                helper.displayOverview(
-                  movie.name,
-                  movie.overview,
-                  movie.backdrop_path,
-                  movie.id,
-                  event
-                );
-              }}
-              onMouseEnter={helper.hoverOverDetailsButton}
-            >
-              Details
-            </button>
-          </div>;
+          return (
+            <div key={movie.id} className="movie-card">
+              {helper.screenWidth <= 800 ? (
+                <img
+                  className="movie-poster"
+                  src={`https://image.tmdb.org/t/p/w500/${
+                    movie.poster_path ? movie.poster_path : movie.backdrop_path
+                  }`}
+                  alt="Movie poster"
+                  title={`${movie.name}`}
+                  onTouchStart={helper.displayDetailsButton}
+                />
+              ) : (
+                <img
+                  className="movie-poster"
+                  src={`https://image.tmdb.org/t/p/w500/${
+                    movie.poster_path ? movie.poster_path : movie.backdrop_path
+                  }`}
+                  alt="Movie poster"
+                  title={`${movie.name}`}
+                  onMouseEnter={helper.displayDetailsButton}
+                  onMouseLeave={helper.closeDetailsButton}
+                />
+              )}
+              <button
+                className="detail-button"
+                onClick={(event) => {
+                  helper.displayOverview(
+                    movie.name,
+                    movie.overview,
+                    movie.backdrop_path,
+                    movie.id,
+                    event
+                  );
+                }}
+                onMouseEnter={helper.hoverOverDetailsButton}
+              >
+                Details
+              </button>
+            </div>
+          );
         })}
       </div>
     </section>

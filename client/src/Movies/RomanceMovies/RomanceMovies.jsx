@@ -16,45 +16,47 @@ function RomanceMovies() {
       <h3 className="category">Romance</h3>
       <div className="movies">
         {movies.map((movie) => {
-          <div key={movie.id} className="movie-card">
-          {helper.screenWidth <= 800 ? (
-            <img
-              className="movie-poster"
-              src={`https://image.tmdb.org/t/p/w500/${
-                movie.poster_path ? movie.poster_path : movie.backdrop_path
-              }`}
-              alt="Movie poster"
-              title={`${movie.name}`}
-              onTouchStart={helper.displayDetailsButton}
-            />
-          ) : (
-            <img
-              className="movie-poster"
-              src={`https://image.tmdb.org/t/p/w500/${
-                movie.poster_path ? movie.poster_path : movie.backdrop_path
-              }`}
-              alt="Movie poster"
-              title={`${movie.name}`}
-              onMouseEnter={helper.displayDetailsButton}
-              onMouseLeave={helper.closeDetailsButton}
-            />
-          )}
-          <button
-            className="detail-button"
-            onClick={(event) => {
-              helper.displayOverview(
-                movie.name,
-                movie.overview,
-                movie.backdrop_path,
-                movie.id,
-                event
-              );
-            }}
-            onMouseEnter={helper.hoverOverDetailsButton}
-          >
-            Details
-          </button>
-        </div>;
+          return (
+            <div key={movie.id} className="movie-card">
+              {helper.screenWidth <= 800 ? (
+                <img
+                  className="movie-poster"
+                  src={`https://image.tmdb.org/t/p/w500/${
+                    movie.poster_path ? movie.poster_path : movie.backdrop_path
+                  }`}
+                  alt="Movie poster"
+                  title={`${movie.name}`}
+                  onTouchStart={helper.displayDetailsButton}
+                />
+              ) : (
+                <img
+                  className="movie-poster"
+                  src={`https://image.tmdb.org/t/p/w500/${
+                    movie.poster_path ? movie.poster_path : movie.backdrop_path
+                  }`}
+                  alt="Movie poster"
+                  title={`${movie.name}`}
+                  onMouseEnter={helper.displayDetailsButton}
+                  onMouseLeave={helper.closeDetailsButton}
+                />
+              )}
+              <button
+                className="detail-button"
+                onClick={(event) => {
+                  helper.displayOverview(
+                    movie.name,
+                    movie.overview,
+                    movie.backdrop_path,
+                    movie.id,
+                    event
+                  );
+                }}
+                onMouseEnter={helper.hoverOverDetailsButton}
+              >
+                Details
+              </button>
+            </div>
+          );
         })}
       </div>
     </section>
