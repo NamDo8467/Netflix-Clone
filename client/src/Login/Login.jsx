@@ -19,7 +19,7 @@ function Login() {
 
     try {
       const result = await axios.post(
-        "https://whispering-plains-27657.herokuapp.com/login",
+        "https://whispering-plains-27657.herokuapp.com/movies",
         {
           email: email,
           password: password,
