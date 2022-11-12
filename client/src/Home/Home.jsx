@@ -243,12 +243,12 @@ function Home() {
       <section className="section7">
         <footer className="footer">
           <p>
-            <a href="#">Questions? Contact us.</a>
+            <a href="/">Questions? Contact us.</a>
           </p>
           <ul>
             <div>
               <li>
-                <a href="#">FAQ</a>
+                <a href="/">FAQ</a>
               </li>
               <li>
                 <a href="/">Investor Relation</a>
@@ -257,46 +257,46 @@ function Home() {
                 <a href="/">Privacy</a>
               </li>
               <li>
-                <a href="#">Speed Test</a>
+                <a href="/">Speed Test</a>
               </li>
             </div>
             <div>
               <li>
-                <a href="#">Help Center</a>
+                <a href="/">Help Center</a>
               </li>
               <li>
-                <a href="#">Jobs</a>
+                <a href="/">Jobs</a>
               </li>
               <li>
-                <a href="#">Cookies Preferences</a>
+                <a href="/">Cookies Preferences</a>
               </li>
               <li>
-                <a href="#">Legal Notices</a>
-              </li>
-            </div>
-            <div>
-              <li>
-                <a href="#">Account</a>
-              </li>
-              <li>
-                <a href="#">Ways to watch</a>
-              </li>
-              <li>
-                <a href="#">Corporate Information</a>
-              </li>
-              <li>
-                <a href="#">Only On Netflix</a>
+                <a href="/">Legal Notices</a>
               </li>
             </div>
             <div>
               <li>
-                <a href="#">Media Center</a>
+                <a href="/">Account</a>
               </li>
               <li>
-                <a href="#">Terms of Use</a>
+                <a href="/">Ways to watch</a>
               </li>
               <li>
-                <a href="#">Contact Us</a>
+                <a href="/">Corporate Information</a>
+              </li>
+              <li>
+                <a href="/">Only On Netflix</a>
+              </li>
+            </div>
+            <div>
+              <li>
+                <a href="/">Media Center</a>
+              </li>
+              <li>
+                <a href="/">Terms of Use</a>
+              </li>
+              <li>
+                <a href="/">Contact Us</a>
               </li>
             </div>
           </ul>
