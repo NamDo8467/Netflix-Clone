@@ -11,7 +11,7 @@ function Logout() {
 		const result = await axios.get(URL, {
 			withCredentials: true
 		})
-
+    console.log(result);
 		document.cookie = "jwtAuth=; max-age=0; path=/"
 
 		history.push("/")
