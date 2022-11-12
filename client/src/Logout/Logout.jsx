@@ -2,7 +2,7 @@ import React from "react"
 import { useHistory } from "react-router-dom"
 import userIcon from "../images/userIcon.png"
 import axios from "axios"
-function Logout(props) {
+function Logout() {
 	let history = useHistory()
 	// const URL = "https://whispering-plains-27657.herokuapp.com/logout"
 	const URL = "http://localhost:5500/logout"
