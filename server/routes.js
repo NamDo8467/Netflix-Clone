@@ -86,7 +86,7 @@ route.post("/login", async (req, res) => {
 		res.status(400).send(errors)
 	}
 })
-route.get("/logout", (req, res) => {
+route.post("/logout", (req, res) => {
 	res.clearCookie("jwtAuth")
 	res.clearCookie("name")
 	// res.cookie("jwtAuth", "", { maxAge: 1, sameSite: "none", secure: true })
