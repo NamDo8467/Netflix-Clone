@@ -46,7 +46,7 @@ function TvShows() {
 				<ComedyTvShows />
 			</TvShowContainer>
 		)
-	} else if(isVerified === "Not verified") {
+	} else {
 		return (
 			<div
 				style={{
