@@ -19,7 +19,7 @@ app.use(cookieParser())
 
 
 // const URL = "https://my-notflix.netlify.app"  /* CHANGE TO THIS URL WHEN READY FOR PRODUCTION */;
-const URL = "http://localhost:3000"
+const URL = "https://my-notflix.netlify.app"
 
 app.use(cors({ origin: URL, optionsSuccessStatus: 200, credentials: true }))
 
