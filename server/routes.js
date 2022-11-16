@@ -90,6 +90,7 @@ route.post("/login", async (req, res) => {
 		}
 	} catch (err) {
 		const errors = handleError(err)
+		console.log(err)
 		res.status(400).send(errors)
 	}
 })
