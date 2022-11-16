@@ -9,7 +9,7 @@ function Logout() {
 	const logout = async e => {
 		e.preventDefault()
 		const result = await axios
-			.get(URL, {
+			.post(URL, {
 				withCredentials: true
 			})
 			.then(result => {
