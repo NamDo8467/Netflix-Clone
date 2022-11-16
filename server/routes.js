@@ -69,6 +69,8 @@ route.post("/login", async (req, res) => {
 			const jwtAuth = createToken(user._id)
 
 			res.cookie("jwtAuth", jwtAuth, {
+				domain: URL,
+				path: "/",
 				maxAge: 2 * 60 * 60 * 1000,
 				sameSite: "none",
 				secure: true,
@@ -76,6 +78,8 @@ route.post("/login", async (req, res) => {
 				path: "/"
 			})
 			res.cookie("name", user.name, {
+				domain: URL,
+				path: "/",
 				maxAge: 2 * 60 * 60 * 1000,
 				sameSite: "none",
 				secure: true,
@@ -91,19 +95,23 @@ route.post("/login", async (req, res) => {
 })
 route.post("/logout", (req, res) => {
 	res.clearCookie("jwtAuth", {
+		domain: URL,
+		path: "/",
 		sameSite: "none",
 		secure: true,
 		httpOnly: true,
 		path: "/"
 	})
 	res.clearCookie("name", {
+		domain: URL,
+		path: "/",
 		sameSite: "none",
 		secure: true,
 		path: "/"
 	})
 	// res.cookie("jwtAuth", "", { maxAge: 1 })
 	// res.cookie("name", "", { maxAge: 1 })
-	
+
 	res.status(201).send("Logged out")
 })
 route.get("/movies", verifyCookie, (req, res) => {
