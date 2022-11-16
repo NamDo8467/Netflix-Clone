@@ -87,10 +87,10 @@ route.post("/login", async (req, res) => {
 	}
 })
 route.post("/logout", (req, res) => {
-	res.clearCookie("jwtAuth", { sameSite: "none", secure: true, httpOnly: true })
-	res.clearCookie("name", { sameSite: "none", secure: true })
-	// res.cookie("jwtAuth", "", { maxAge: 1, sameSite: "none", secure: true })
-	// res.cookie("name", "", { maxAge: 1, sameSite: "none", secure: true })
+	// res.clearCookie("jwtAuth", { sameSite: "none", secure: true, httpOnly: true })
+	// res.clearCookie("name", { sameSite: "none", secure: true })
+	res.cookie("jwtAuth", "", { expires: Date.now() })
+	res.cookie("name", "", { expires: Date.now() })
 	res.status(201).send("Logged out")
 })
 route.get("/movies", verifyCookie, (req, res) => {
