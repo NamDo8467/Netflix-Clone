@@ -87,8 +87,10 @@ route.post("/login", async (req, res) => {
 	}
 })
 route.get("/logout", (req, res) => {
-	res.cookie("jwtAuth", "", { maxAge: 1 })
-	res.cookie("name", "", { maxAge: 1 })
+	res.clearCookie("jwtAuth")
+	res.clearCookie("name")
+	// res.cookie("jwtAuth", "", { maxAge: 1, sameSite: "none", secure: true })
+	// res.cookie("name", "", { maxAge: 1, sameSite: "none", secure: true })
 	res.status(201).send("Logged out")
 })
 route.get("/movies", verifyCookie, (req, res) => {
