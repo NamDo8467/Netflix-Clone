@@ -18,7 +18,7 @@ function SignUp(props) {
 		try {
 			const result = await axios.post(
 				// "https://whispering-plains-27657.herokuapp.com/signup",
-				"http://localhost:5500/signup",
+				"https://netflix-clone-t3w3.vercel.app/signup",
 				{
 					name: name,
 					email: email,

@@ -8,7 +8,7 @@ function Login() {
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
 	// const URL =  "https://whispering-plains-27657.herokuapp.com/movies"
-	const URL = "http://localhost:5500/login"
+	const URL = "https://netflix-clone-t3w3.vercel.app/login"
 	let history = useHistory()
 	const login = async e => {
 		e.preventDefault()
