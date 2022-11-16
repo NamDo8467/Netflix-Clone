@@ -12,7 +12,7 @@ function ActionMovies() {
     const link = `https://api.themoviedb.org/3/discover/movie?api_key=cc803c8c2a7e8fddea1b3ff64514f0b4&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=28&with_watch_monetization_types=flatrate`;
     getMovies(link, setMovies);
   }, [setMovies]);
-  console.log(movies);
+  // console.log(movies);
   return (
     <section className="action-movies">
       <h3 className="category">Action</h3>

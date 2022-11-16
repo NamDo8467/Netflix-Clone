@@ -12,7 +12,7 @@ function Movies() {
 	// let history = useHistory()
 	// const URL = "https://whispering-plains-27657.herokuapp.com/movies"
 	const URL = "https://netflix-clone-t3w3.vercel.app/movies"
-	const [isVerified, setIsVerified] = useState("")
+	const [isVerified, setIsVerified] = useState("Not verified")
 
 	useEffect(() => {
 		const source = axios.CancelToken.source()
@@ -34,10 +34,11 @@ function Movies() {
 
 		return () => {
 			source.cancel()
+			setIsVerified("Not verified")
 		}
 	}, [])
 	if (isVerified === "Verified") {
-		// console.log(isVerified)
+		console.log(isVerified)
 		return (
 			<MovieContainer>
 				<MovieHead />
