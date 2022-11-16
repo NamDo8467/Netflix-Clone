@@ -72,12 +72,14 @@ route.post("/login", async (req, res) => {
 				maxAge: 2 * 60 * 60 * 1000,
 				sameSite: "none",
 				secure: true,
-				httpOnly: true
+				httpOnly: true,
+				path: "/"
 			})
 			res.cookie("name", user.name, {
 				maxAge: 2 * 60 * 60 * 1000,
 				sameSite: "none",
-				secure: true
+				secure: true,
+				path: "/"
 			})
 
 			res.status(200).send({ message: "logged in " })
@@ -88,10 +90,20 @@ route.post("/login", async (req, res) => {
 	}
 })
 route.post("/logout", (req, res) => {
-	// res.clearCookie("jwtAuth", { sameSite: "none", secure: true, httpOnly: true })
-	// res.clearCookie("name", { sameSite: "none", secure: true })
-	res.cookie("jwtAuth", "", { maxAge: 1 })
-	res.cookie("name", "", { maxAge: 1 })
+	res.clearCookie("jwtAuth", {
+		sameSite: "none",
+		secure: true,
+		httpOnly: true,
+		path: "/"
+	})
+	res.clearCookie("name", {
+		sameSite: "none",
+		secure: true,
+		path: "/"
+	})
+	// res.cookie("jwtAuth", "", { maxAge: 1 })
+	// res.cookie("name", "", { maxAge: 1 })
+	
 	res.status(201).send("Logged out")
 })
 route.get("/movies", verifyCookie, (req, res) => {
