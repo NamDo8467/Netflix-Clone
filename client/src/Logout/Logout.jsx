@@ -8,20 +8,19 @@ function Logout() {
 	const URL = "https://netflix-clone-t3w3.vercel.app/logout"
 	const logout = async e => {
 		e.preventDefault()
-		const result = await axios
-			.post(URL, {
+		try {
+			const result = await axios.post(URL, {
 				withCredentials: true
 			})
-			.then(result => {
-				console.log(result.data)
-			})
-			.catch(error => {
-				console.log(error)
-			})
-		console.log(result)
-		document.cookie = "jwtAuth=; max-age=0; path=/"
 
-		history.push("/")
+			console.log(result)
+			// document.cookie = "jwtAuth=; max-age=0; path=/"
+
+			history.push("/")
+		} catch (error) {
+			alert("Error")
+			console.log(error)
+		}
 	}
 
 	return (
