@@ -33,6 +33,7 @@ function TvShows() {
 
 		return () => {
 			source.cancel()
+			setIsVerified("Not verified")
 		}
 	}, [])
 	if (isVerified === "Verified") {
