@@ -61,6 +61,7 @@ route.post("/login", async (req, res) => {
 	// const path = req.path
 	// const url = req.headers.origin
 	// console.log(url, path)
+	console.log(req.cookies)
 	try {
 		const user = await User.findOne({ email })
 		if (!user) {
