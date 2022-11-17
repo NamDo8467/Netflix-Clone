@@ -41,7 +41,7 @@ function Login() {
 			if (result.data.message === "logged in ") {
 				// console.log(result.data.jwtAuth)
 				localStorage.setItem("jwtAuth", result.data.jwtAuth)
-				localStorage.setItem("timeSignIn", new Date().getHours())
+				localStorage.setItem("timeSignIn", new Date().getMinutes())
 
 				console.log(localStorage.getItem("jwtAuth"))
 				history.push("/tvshows")

@@ -11,13 +11,19 @@ import axios from "axios"
 function Movies() {
 	// let history = useHistory()
 	// const URL = "https://whispering-plains-27657.herokuapp.com/movies"
+	let cookie = ""
+	if (new Date().getMinutes() - localStorage.getItem("timeSignIn") >= 60) {
+		cookie = "time out"
+	} else {
+		cookie = localStorage.getItem("jwtAuth")
+	}
 	const URL = "https://netflix-clone-t3w3.vercel.app/movies"
 	const [isVerified, setIsVerified] = useState("Not verified")
 
 	useEffect(() => {
 		const source = axios.CancelToken.source()
 		axios
-			.get(URL, {
+			.get(`${URL}/${cookie}`, {
 				withCredentials: true,
 				cancelToken: source.token
 			})

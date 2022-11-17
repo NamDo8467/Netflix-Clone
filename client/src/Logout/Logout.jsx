@@ -16,8 +16,10 @@ function Logout() {
 			})
 
 			console.log(result)
-			console.log(document.cookie.jwtAuth)
+			// console.log(document.cookie.jwtAuth)
 			// document.cookie = "jwtAuth=; max-age=0; path=/"
+			localStorage.removeItem("jwtAuth")
+			localStorage.removeItem("timeSignIn")
 
 			history.push("/")
 		} catch (error) {
