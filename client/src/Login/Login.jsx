@@ -40,7 +40,7 @@ function Login() {
 
 			if (result.data.message === "logged in ") {
 				console.log(result.data.jwtAuth)
-				document.cookie = `jwtAuth=${result.data.jwtAuth}; max-age=7200; path=/`;
+				document.cookie = `jwtAuth=${result.data.jwtAuth}; max-age=7200; path=/; sameSite=none`;
 				history.push("/tvshows")
 			}
 		} catch (error) {
