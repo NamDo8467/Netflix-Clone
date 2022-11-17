@@ -11,7 +11,12 @@ import "../TvShows_Movies.css"
 
 function TvShows() {
 	// let history = useHistory()
-	const cookie = document.cookie
+	let cookie = ""
+	if (new Date().getHours() - localStorage.getItem("timeSignIn") >= 1) {
+		cookie = "time out"
+	} else {
+		cookie = localStorage.getItem("jwtAuth")
+	}
 
 	const URL = "https://netflix-clone-t3w3.vercel.app/tvshows"
 	// const URL = "http://localhost:5500/tvshows"
