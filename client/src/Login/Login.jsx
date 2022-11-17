@@ -39,8 +39,11 @@ function Login() {
 			// document.cookie = `cookie=${localStorage.getItem("cookie")}; max-age=7200; path=/`
 
 			if (result.data.message === "logged in ") {
-				console.log(result.data.jwtAuth)
-				document.cookie = `jwtAuth=${result.data.jwtAuth}; max-age=7200; path=/`;
+				// console.log(result.data.jwtAuth)
+				localStorage.setItem("jwtAuth", result.data.jwtAuth)
+				localStorage.setItem("timeSignIn", new Date().getHours())
+
+				console.log(localStorage.getItem("jwtAuth"))
 				history.push("/tvshows")
 			}
 		} catch (error) {
