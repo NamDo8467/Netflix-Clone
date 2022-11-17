@@ -75,14 +75,15 @@ route.post("/login", async (req, res) => {
 			res.cookie("jwtAuth", jwtAuth, {
 				domain: URL,
 				maxAge: 2 * 60 * 60 * 1000,
-				sameSite: "none",
-				secure: true,
+				// sameSite: "none",
+				// secure: true,
 				httpOnly: true
 			})
 			res.cookie("name", user.name, {
-				maxAge: 2 * 60 * 60 * 1000,
-				sameSite: "none",
-				secure: true
+				domain: URL,
+				maxAge: 2 * 60 * 60 * 1000
+				// sameSite: "none",
+				// secure: true
 			})
 
 			res.status(200).json({ message: "logged in " })
