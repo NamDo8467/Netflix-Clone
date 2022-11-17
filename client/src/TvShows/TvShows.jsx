@@ -11,6 +11,7 @@ import "../TvShows_Movies.css"
 
 function TvShows() {
 	// let history = useHistory()
+	const cookie = document.cookie
 
 	const URL = "https://netflix-clone-t3w3.vercel.app/tvshows"
 	// const URL = "http://localhost:5500/tvshows"
@@ -21,7 +22,7 @@ function TvShows() {
 		const source = axios.CancelToken.source()
 
 		axios
-			.get(URL, {
+			.get(`${URL}/${cookie}`, {
 				withCredentials: true,
 				cancelToken: source.token
 			})
