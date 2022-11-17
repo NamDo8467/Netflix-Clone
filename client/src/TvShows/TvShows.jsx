@@ -30,6 +30,7 @@ function TvShows() {
 			})
 			.catch(error => {
 				setIsVerified(error.response.data)
+				console.log(error.response)
 				// history.goBack();
 			})
 
