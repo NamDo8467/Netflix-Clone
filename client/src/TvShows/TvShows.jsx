@@ -11,8 +11,10 @@ import "../TvShows_Movies.css"
 
 function TvShows() {
 	// let history = useHistory()
-	// const URL = "https://whispering-plains-27657.herokuapp.com/tvshows"
+
 	const URL = "https://netflix-clone-t3w3.vercel.app/tvshows"
+	// const URL = "http://localhost:5500/tvshows"
+
 	const [isVerified, setIsVerified] = useState("Not verified")
 
 	useEffect(() => {
@@ -31,7 +33,7 @@ function TvShows() {
 				// history.goBack();
 			})
 
-		console.log(isVerified)
+		
 		return () => {
 			source.cancel()
 			setIsVerified("Not verified")
@@ -51,8 +53,7 @@ function TvShows() {
 			<div
 				style={{
 					backgroundColor: "white",
-					height: "100vh",
-					marginLeft: "50px"
+					height: "100vh"
 				}}
 			>
 				<p>Access denied</p>

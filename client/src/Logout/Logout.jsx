@@ -5,20 +5,23 @@ import axios from "axios"
 function Logout() {
 	let history = useHistory()
 	// const URL = "https://whispering-plains-27657.herokuapp.com/logout"
-	const URL = "https://netflix-clone-t3w3.vercel.app/logout"
+
+	const URL = "http://netflix-clone-t3w3.vercel.app/logout"
+	// const URL = "http://localhost:5500/logout"
 	const logout = async e => {
 		e.preventDefault()
 		try {
-			const result = await axios.post(URL, {
+			const result = await axios.get(URL, {
 				withCredentials: true
 			})
 
 			console.log(result)
+			console.log(document.cookie.jwtAuth)
 			// document.cookie = "jwtAuth=; max-age=0; path=/"
 
 			history.push("/")
 		} catch (error) {
-			alert("Error")
+			alert("Error, check console for more detail")
 			console.log(error)
 		}
 	}
