@@ -11,7 +11,7 @@ const verifyCookie = (req, res, next) => {
 			}
 		})
 	} else {
-		res.status(400).send({ message: "Not verified" })
+		res.status(400).send({ message: "Not verified in the else statement below" })
 	}
 }
 
