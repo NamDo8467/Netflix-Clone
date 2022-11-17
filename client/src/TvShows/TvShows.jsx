@@ -33,10 +33,8 @@ function TvShows() {
 				setIsVerified(error.response.data)
 				console.log(error.response)
 				console.log(error.response.data)
-				// history.goBack();
 			})
 
-		
 		return () => {
 			source.cancel()
 			setIsVerified("Not verified")
