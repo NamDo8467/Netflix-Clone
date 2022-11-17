@@ -5,7 +5,7 @@ const verifyCookie = (req, res, next) => {
 	if (cookie) {
 		jwt.verify(cookie, "netflix secret key", (err, result) => {
 			if (err) {
-				res.status(400).send({ message: "Not verified" })
+				res.status(400).send({ message: "Not verified", err })
 			} else {
 				next()
 			}
