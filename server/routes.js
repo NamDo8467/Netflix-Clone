@@ -105,7 +105,7 @@ route.get("/movies", verifyCookie, (req, res) => {
 	res.status(201).send({ message: "Verified" })
 })
 
-route.get("/tvshows", verifyCookie, (req, res) => {
+route.get("/tvshows/:cookie", verifyCookie, (req, res) => {
 	res.status(201).send({ message: "Verified" })
 })
 

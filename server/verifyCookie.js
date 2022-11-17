@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken")
 
 const verifyCookie = (req, res, next) => {
-	const cookie = req.cookies.jwtAuth
+	const cookie = req.params.cookie
 	if (cookie) {
 		jwt.verify(cookie, "netflix secret key", (err, result) => {
 			if (err) {
