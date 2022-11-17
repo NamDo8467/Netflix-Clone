@@ -11,7 +11,7 @@ import axios from "axios"
 function Movies() {
 	// let history = useHistory()
 	// const URL = "https://whispering-plains-27657.herokuapp.com/movies"
-	const URL = "http://netflix-clone-t3w3.vercel.app/movies"
+	const URL = "https://netflix-clone-t3w3.vercel.app/movies"
 	const [isVerified, setIsVerified] = useState("Not verified")
 
 	useEffect(() => {

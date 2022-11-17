@@ -6,7 +6,7 @@ function Logout() {
 	let history = useHistory()
 	// const URL = "https://whispering-plains-27657.herokuapp.com/logout"
 
-	const URL = "http://netflix-clone-t3w3.vercel.app/logout"
+	const URL = "https://netflix-clone-t3w3.vercel.app/logout"
 	// const URL = "http://localhost:5500/logout"
 	const logout = async e => {
 		e.preventDefault()
