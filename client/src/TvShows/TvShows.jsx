@@ -12,7 +12,7 @@ import "../TvShows_Movies.css"
 function TvShows() {
 	// let history = useHistory()
 	let cookie = ""
-	if (new Date().getHours() - localStorage.getItem("timeSignIn") >= 1) {
+	if (new Date().getMinutes() - localStorage.getItem("timeSignIn") >= 60) {
 		cookie = "time out"
 	} else {
 		cookie = localStorage.getItem("jwtAuth")
