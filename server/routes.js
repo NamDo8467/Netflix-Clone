@@ -4,7 +4,7 @@ const User = require("./model/User")
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt")
 const verifyCookie = require("./verifyCookie")
-const URL = "https://my-notflix.netlify.app"
+// const URL = "http://localhost:3000"
 
 const handleError = err => {
 	const errors = {
@@ -57,6 +57,9 @@ route.post("/signup", async (req, res) => {
 route.post("/login", async (req, res) => {
 	const email = req.body.email
 	const password = req.body.password
+	// const path = req.path
+	// const url = req.headers.origin
+	// console.log(url, path)
 	try {
 		const user = await User.findOne({ email })
 		if (!user) {
@@ -69,51 +72,29 @@ route.post("/login", async (req, res) => {
 			const jwtAuth = createToken(user._id)
 
 			res.cookie("jwtAuth", jwtAuth, {
-				domain: URL,
-				path: "/",
 				maxAge: 2 * 60 * 60 * 1000,
 				sameSite: "none",
 				secure: true,
-				httpOnly: true,
-				path: "/"
+				httpOnly: true
 			})
 			res.cookie("name", user.name, {
-				domain: URL,
-				path: "/",
 				maxAge: 2 * 60 * 60 * 1000,
 				sameSite: "none",
-				secure: true,
-				path: "/"
+				secure: true
 			})
 
-			res.status(200).send({ message: "logged in " })
+			res.status(200).json({ message: "logged in " })
 		}
 	} catch (err) {
 		const errors = handleError(err)
-		console.log(err)
+		// console.log(err)
 		res.status(400).send(errors)
 	}
 })
-route.post("/logout", (req, res) => {
-	res.clearCookie("jwtAuth", {
-		domain: URL,
-		path: "/",
-		sameSite: "none",
-		secure: true,
-		httpOnly: true,
-		path: "/"
-	})
-	res.clearCookie("name", {
-		domain: URL,
-		path: "/",
-		sameSite: "none",
-		secure: true,
-		path: "/"
-	})
-	// res.cookie("jwtAuth", "", { maxAge: 1 })
-	// res.cookie("name", "", { maxAge: 1 })
+route.get("/logout", (req, res) => {
+	res.cookie("jwtAuth", "", { maxAge: 1 })
 
-	res.status(201).send("Logged out")
+	res.status(200).send("Logged out")
 })
 route.get("/movies", verifyCookie, (req, res) => {
 	res.status(201).send({ message: "Verified" })

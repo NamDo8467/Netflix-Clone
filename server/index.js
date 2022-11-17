@@ -16,19 +16,19 @@ app.use(cookieParser())
 //   next();
 // });
 
-
-
-// const URL = "https://my-notflix.netlify.app"  /* CHANGE TO THIS URL WHEN READY FOR PRODUCTION */;
-const URL = "https://my-notflix.netlify.app"
+const URL = "https://my-notflix.netlify.app"  /* CHANGE TO THIS URL WHEN READY FOR PRODUCTION */;
+// const URL = "http://localhost:3000"
 
 app.use(cors({ origin: URL, optionsSuccessStatus: 200, credentials: true }))
 
 app.set("trust proxy", 1)
 app.use((req, res, next) => {
-	res.setHeader("Access-Control-Allow-Origin", URL) // COMMENT OUT THIS AFTER FINISHING FIXING THE BUG
-
+	res.setHeader("Access-Control-Allow-Origin", URL)
 	res.setHeader("Access-Control-Allow-Credentials", true)
-	res.header("Access-Control-Allow-Headers", "Origin,X-Requested-With,Content-Type,Accept,content-type,application/json")
+	res.header(
+		"Access-Control-Allow-Headers",
+		"Origin,X-Requested-With,X-HTTP-Method-Override,,Content-Type,Accept,content-type,application/json"
+	)
 	res.setHeader("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, PATCH, OPTIONS")
 	next()
 })
