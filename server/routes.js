@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt")
 const verifyCookie = require("./verifyCookie")
 // const URL = "http://localhost:3000"
+const URL = "https://my-notflix.netlify.app"
 
 const handleError = err => {
 	const errors = {
@@ -72,6 +73,7 @@ route.post("/login", async (req, res) => {
 			const jwtAuth = createToken(user._id)
 
 			res.cookie("jwtAuth", jwtAuth, {
+				domain: URL,
 				maxAge: 2 * 60 * 60 * 1000,
 				sameSite: "none",
 				secure: true,
