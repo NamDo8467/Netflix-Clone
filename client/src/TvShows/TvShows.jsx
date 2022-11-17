@@ -31,6 +31,7 @@ function TvShows() {
 			.catch(error => {
 				setIsVerified(error.response.data)
 				console.log(error.response)
+				console.log(error.response.data)
 				// history.goBack();
 			})
 
