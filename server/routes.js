@@ -86,7 +86,7 @@ route.post("/login", async (req, res) => {
 				// secure: true
 			})
 
-			res.status(200).json({ message: "logged in " })
+			res.status(200).json({ message: "logged in ", jwtAuth })
 		}
 	} catch (err) {
 		const errors = handleError(err)
