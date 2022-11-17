@@ -36,11 +36,11 @@ function Login() {
 			// localStorage.setItem("cookie", result.data.jwtAuth);
 			// let now = new Date();
 			// now.setTime(now.getTime() + 1 * 3600 * 1000);
-			// document.cookie = `cookie=${localStorage.getItem(
-			//   "cookie"
-			// )}; max-age=7200; path=/`;
+			// document.cookie = `cookie=${localStorage.getItem("cookie")}; max-age=7200; path=/`
 
 			if (result.data.message === "logged in ") {
+				console.log(result.data.jwtAuth)
+				document.cookie = `jwtAuth=${result.data.jwtAuth}; max-age=7200; path=/`
 				history.push("/tvshows")
 			}
 		} catch (error) {
